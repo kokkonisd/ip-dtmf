@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 entity tick_sin is
   port (
     clk : in std_logic;
-    -- div = Fclk / (Fsin * 64)
-    div : in std_logic_vector (11 downto 0);
+    -- div = Fclk / (Fsin * 64) (11 bits max)
+    div : in std_logic_vector (10 downto 0);
     s : out std_logic
   );
 end entity;

@@ -8,12 +8,12 @@ architecture test of tick_sin_tb is
     component tick_sin 
       port (
         clk : in std_logic;
-        div : in std_logic_vector (11 downto 0);
+        div : in std_logic_vector (10 downto 0);
         s : out std_logic
       );
     end component; 
 
-    signal div : std_logic_vector (11 downto 0);
+    signal div : std_logic_vector (10 downto 0);
     signal clk, s : std_logic;
     constant clk_period : time := 16.66667 ns; -- Fclk = 60 MHz
 
@@ -22,7 +22,7 @@ begin
 
     -- div = 634 = Fclk / (Fsin * 64) 
     -- pour Fsin = 1477Hz et Fclk = 60 MHz
-    div <= "001001111010";
+    div <= "01001111010";
 
     clk_process : process
         begin
