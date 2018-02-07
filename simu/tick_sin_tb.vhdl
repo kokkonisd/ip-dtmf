@@ -1,11 +1,11 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity tick_tb is
+entity tick_sin_tb is
 end entity;
 
-architecture test of tick_tb is
-    component tick 
+architecture test of tick_sin_tb is
+    component tick_sin 
       port (
         clk : in std_logic;
         div : in std_logic_vector (11 downto 0);
@@ -18,7 +18,7 @@ architecture test of tick_tb is
     constant clk_period : time := 16.66667 ns; -- Fclk = 60 MHz
 
 begin
-    test : tick port map(clk, div, s);
+    test : tick_sin port map(clk, div, s);
 
     -- div = 634 = Fclk / (Fsin * 64) 
     -- pour Fsin = 1477Hz et Fclk = 60 MHz
