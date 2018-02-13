@@ -23,30 +23,22 @@ begin
     test : counter_pointer port map(test_clk, test_enable, test_clear, test_count);
 
     clk_process : process
-        begin
-          test_clear <= '0';
+    begin
+        test_clk <= '1';
+        wait for clk_period / 2;
+        test_clk <= '0';
+        wait for clk_period / 2;
+    end process;
 
-          for I in 0 to 1000 loop
-            test_clk <= '1';
-            wait for clk_period / 2;
-            test_clk <= '0';
-            wait for clk_period / 2;
-
-            if (I < 100) then
-              test_enable <= '1';
-            else
-              test_enable <= '0';
-            end if;
-
-            if (I = 10) then
-              test_clear <= '1';
-            else
-              test_clear <= '0';
-            end if;
-          end loop;
-
-          assert false report "End of the simulation";
-          wait;
+    stimulus : process
+    begin
+        test_clear <= '0';
+        test_enable <= '1';
+        wait for clk_period * 100;
+        test_enable <= '0';
+        wait for clk_period * 2;
+        test_clear <= '1';
+        wait for clk_period * 3;
     end process;
 
 end architecture ;
