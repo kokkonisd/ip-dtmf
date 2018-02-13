@@ -6,11 +6,11 @@ end entity;
 
 architecture test of tick_sin_tb is
     component tick_sin 
-      port (
-        clk : in std_logic;
-        div : in std_logic_vector (10 downto 0);
-        s : out std_logic
-      );
+        port (
+            clk : in std_logic;
+            div : in std_logic_vector (10 downto 0);
+            s : out std_logic
+        );
     end component; 
 
     signal div : std_logic_vector (10 downto 0);
@@ -25,16 +25,11 @@ begin
     div <= "01001111010";
 
     clk_process : process
-        begin
-          for I in 0 to 1000000 loop
-            clk <= '1';
-            wait for clk_period / 2;
-            clk <= '0';
-            wait for clk_period / 2;
-          end loop;
-
-          assert false report "End of the simulation";
-          wait;
+    begin
+        clk <= '1';
+        wait for clk_period / 2;
+        clk <= '0';
+        wait for clk_period / 2;
     end process;
 
     -- en sortie on aura ~94487 Hz =~ 64 * 1477 Hz

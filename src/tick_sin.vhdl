@@ -12,7 +12,7 @@ entity tick_sin is
 end entity;
 
 architecture behav of tick_sin is
-signal i : integer range 0 to 1000000000;
+signal i : integer range 0 to 10000;
 signal s_out : std_logic := '0';
 begin
 
