@@ -33,43 +33,37 @@ begin
 
     clk_process : process
         begin
-
-        test_rst <= '0';
-        
-        for I in 0 to 1000 loop
             test_clk <= '1';
             wait for clk_period / 2;
             test_clk <= '0';
             wait for clk_period / 2;
+    end process;
 
-            if (I = 0) then
-                test_key <= "0000";
-            elsif (I = 10) then
-                test_key <= "0001";
-            elsif (I = 20) then
-                test_key <= "0010";
-            elsif (I = 30) then
-                test_key <= "0011";
-            elsif (I = 40) then
-                test_key <= "0100";
-            elsif (I = 50) then
-                test_key <= "0101";
-            elsif (I = 60) then
-                test_key <= "0110";
-            elsif (I = 70) then
-                test_key <= "0111";
-            elsif (I = 80) then
-                test_key <= "1000";
-            elsif (I = 90) then
-                test_key <= "1001";
-            elsif (I > 100) then
-                test_rst <= '1';
-            end if;
-
-        end loop;
-
-        assert false report "End of the simulation";
-        wait;
+    stimulus : process
+    begin
+        test_rst <= '0';
+        test_key <= "0000";
+        wait for clk_period * 3;
+        test_key <= "0001";
+        wait for clk_period * 3;
+        test_key <= "0010";
+        wait for clk_period * 3;
+        test_key <= "0011";
+        wait for clk_period * 3;
+        test_key <= "0100";
+        wait for clk_period * 3;
+        test_key <= "0101";
+        wait for clk_period * 3;
+        test_key <= "0110";
+        wait for clk_period * 3;
+        test_key <= "0111";
+        wait for clk_period * 3;
+        test_key <= "1000";
+        wait for clk_period * 3;
+        test_key <= "1001";
+        wait for clk_period * 3;
+        test_rst <= '1';
+        wait for clk_period * 3;
     end process;
 
 end architecture;
