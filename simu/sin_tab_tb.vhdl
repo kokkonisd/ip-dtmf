@@ -24,21 +24,19 @@ begin
     test : sin_tab port map(test_clk, test_addr, test_value);
 
     clk_process : process
-        begin
-        wait for clk_period;
-          for I in 0 to 1280 loop
-            test_clk <= '1';
-            wait for clk_period / 2;
-            test_clk <= '0';
-            wait for clk_period / 2;
+    begin
+        test_clk <= '1';
+        wait for clk_period / 2;
+        test_clk <= '0';
+        wait for clk_period / 2;
+    end process;
 
-            if (I rem 10 = 0) then
-                test_addr <= std_logic_vector(to_unsigned(I / 10, 6));
-            end if;
-          end loop;
-
-          assert false report "End of the simulation";
-          wait;
+    stimulus : process
+    begin
+        for I in 0 to 63 loop
+            test_addr <= std_logic_vector(to_unsigned(I, 6));
+            wait for clk_period * 2;
+        end loop;
     end process;
 
 end architecture;
