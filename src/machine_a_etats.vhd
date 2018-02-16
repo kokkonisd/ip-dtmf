@@ -7,7 +7,8 @@ entity MAET is
     CLK : in std_logic;
     ENABLE : in std_logic;
     TOUCH : in std_logic_vector (3 downto 0);
-    KEY : out std_logic_vector (3 downto 0)
+    KEY : out std_logic_vector (3 downto 0);
+    RESET : out std_logic
   );
 end entity MAET;
   
@@ -36,11 +37,13 @@ end entity MAET;
       begin
         case EtatPresent is
         when init =>
+          RESET <= '1';
           if (ENABLE = '1') then
             EtatFutur <= etat0;
           end if;
             
         when etat0 =>
+          RESET <= '0';
           if (TOUCH < "1010") then
             EtatFutur <= etat4;
           else
@@ -79,9 +82,12 @@ end entity MAET;
       
       when etat3 =>
          if (i > 0) then
-           i <= i - 1;
            if (ENABLE = '1') then
-              EtatFutur <= etat2;
+             RESET <= '1';
+             i <= i - 1;
+             EtatFutur <= etat2;
+            else
+              RESET <= '0';
            end if;
          else
            if (ENABLE = '1') then
@@ -90,9 +96,10 @@ end entity MAET;
          end if;
          
       when etat4 =>
-          KEY <= TOUCH;
           if (ENABLE = '1') then
             EtatFutur <= init;
+          else
+            KEY <= TOUCH;
           end if;
           
     end case; 
