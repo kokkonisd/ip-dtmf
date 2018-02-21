@@ -4,7 +4,7 @@ use ieee.std_logic_unsigned.all;
 
 entity MAET is 
   port (
-    CLK : in std_logic;
+    CLK,rst: in std_logic;
     ENABLE : in std_logic;
     TOUCH : in std_logic_vector (3 downto 0);
     KEY : out std_logic_vector (3 downto 0);
@@ -16,25 +16,33 @@ end entity MAET;
   
   type state_type is (init,etat0,etat1,etat2,etat3,etat4);
     
-  signal A : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110111";
-  signal B : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110110";
-  signal C : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110101";
-  signal D : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110100";
-  signal EtatPresent : state_type := init;
-  signal EtatFutur : state_type;
-  signal i : integer;
-  signal TouchInit : std_logic_vector (3 downto 0);
-  begin
+constant A : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110111";
+constant B : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110110";
+constant C : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110101";
+constant D : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110100";
+ signal EtatPresent : state_type := init;
+ signal EtatFutur : state_type;
+ signal i : integer;
+ signal TouchInit : std_logic_vector (3 downto 0);
+ begin
     
-    process (CLK)
+    process (CLK,rst)
       begin
-        if rising_edge (CLK) then
-        EtatPresent <= EtatFutur;
+		if rst = '1' then 
+			EtatPresent <= Init;
+       elsif rising_edge (CLK) then
+         EtatPresent <= EtatFutur;
       end if;
       end process;
       
-    process (EtatPresent, ENABLE)
+    process (clk,rst)
       begin
+		
+		if(rst = '1') then
+			i <= 9;
+			KEY <= "0000";
+			EtatFutur <= init;
+		elsif rising_edge(clk) then 
         case EtatPresent is
         when init =>
           RESET <= '1';
@@ -44,12 +52,14 @@ end entity MAET;
             
         when etat0 =>
           RESET <= '0';
+			 if (ENABLE <= '1') then
           if (TOUCH < "1010") then
             EtatFutur <= etat4;
           else
             TouchInit <= TOUCH;
             EtatFutur <= etat1;
           end if;
+			 end if;
         
       when etat1 =>
           i <= 9;
@@ -103,6 +113,7 @@ end entity MAET;
           end if;
           
     end case; 
+	 end if;
     end process;
 
         
