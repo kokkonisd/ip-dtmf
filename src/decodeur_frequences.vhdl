@@ -15,8 +15,8 @@ entity decodeur_frequences is
 end entity;
 
 architecture behav of decodeur_frequences is
-    signal out1 : std_logic_vector (10 downto 0) := (others => '0');
-    signal out2 : std_logic_vector (10 downto 0) := (others => '0');
+    signal out1 : std_logic_vector (10 downto 0);
+    signal out2 : std_logic_vector (10 downto 0);
 begin
 
     process (clk, rst)

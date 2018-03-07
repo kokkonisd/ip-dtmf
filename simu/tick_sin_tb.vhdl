@@ -7,28 +7,32 @@ end entity;
 architecture test of tick_sin_tb is
     component tick_sin 
         port (
-            clk : in std_logic;
-            div : in std_logic_vector (10 downto 0);
+            clk, rst : in std_logic;
+            div : in std_logic_vector (25 downto 0);
             s : out std_logic
         );
     end component; 
 
-    signal div : std_logic_vector (10 downto 0);
-    signal clk, s : std_logic;
+    signal test_div : std_logic_vector (25 downto 0);
+    signal test_clk, test_s, test_rst : std_logic;
+
     constant clk_period : time := 16.66667 ns; -- Fclk = 60 MHz
 
 begin
-    test : tick_sin port map(clk, div, s);
+    
+    test : tick_sin port map(test_clk, test_rst, test_div, test_s);
+
+    test_rst <= '0';
 
     -- div = 634 = Fclk / (Fsin * 64) 
     -- pour Fsin = 1477Hz et Fclk = 60 MHz
-    div <= "01001111010";
+    test_div <= "00000000000000001001111010";
 
     clk_process : process
     begin
-        clk <= '1';
+        test_clk <= '1';
         wait for clk_period / 2;
-        clk <= '0';
+        test_clk <= '0';
         wait for clk_period / 2;
     end process;
 
