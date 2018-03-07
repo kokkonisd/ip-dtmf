@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity sin_tab is
     port (
-        clk : in std_logic;
+        clk, rst : in std_logic;
         addr : in std_logic_vector (5 downto 0);
         value : out std_logic_vector (5 downto 0)
     );
@@ -40,9 +40,11 @@ begin
 
     value_dec <= -value_tmp when (addr_dec > 32) else value_tmp;
 
-    process (clk)
+    process (clk, rst)
     begin
-        if rising_edge(clk) then
+        if (rst = '1') then
+            value_out <= 0;
+        elsif rising_edge(clk) then
             value_out <= value_dec;
         end if;
     end process;

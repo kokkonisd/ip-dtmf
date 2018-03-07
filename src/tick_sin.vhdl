@@ -3,12 +3,12 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity tick_sin is
-  port (
-    clk,rst : in std_logic;
-    -- div = Fclk / (Fsin * 64) (11 bits max)
-    div : in std_logic_vector (25 downto 0);
-    s : out std_logic
-  );
+    port (
+        clk, rst : in std_logic;
+        -- div = Fclk / (Fsin * 64) (11 bits max)
+        div : in std_logic_vector (25 downto 0);
+        s : out std_logic
+    );
 end entity;
 
 architecture behav of tick_sin is
@@ -18,11 +18,11 @@ begin
 
     s <= s_out;
 
-    process (clk,rst)
+    process (clk, rst)
     begin
-		  if rst ='1' then 
-				i <= 0;
-				s_out <= '0';
+		if (rst = '1') then 
+			i <= 0;
+			s_out <= '0';
         elsif rising_edge(clk) then
             if (i = to_integer(unsigned(div))) then
                 i <= 0;

@@ -19,50 +19,47 @@ architecture behav of decodeur_frequences is
     signal out2 : std_logic_vector (10 downto 0) := (others => '0');
 begin
 
-    process (clk)
+    process (clk, rst)
     begin
-        if rising_edge(clk) then
-            if (rst = '0') then
-                case key is
-                    when "0000" =>
-                        out1 <= "01111100100";
-                        out2 <= "01010111101";
-                    when "0001" =>
-                        out1 <= "10101000001";
-                        out2 <= "01100000111";
-                    when "0010" =>
-                        out1 <= "10101000001";
-                        out2 <= "01010111101";
-                    when "0011" =>
-                        out1 <= "10101000001";
-                        out2 <= "01001111010";
-                    when "0100" =>
-                        out1 <= "10011000001";
-                        out2 <= "01100000111";
-                    when "0101" =>
-                        out1 <= "10011000001";
-                        out2 <= "01010111101";
-                    when "0110" =>
-                        out1 <= "10011000001";
-                        out2 <= "01001111010";
-                    when "0111" =>
-                        out1 <= "10001001100";
-                        out2 <= "01100000111";
-                    when "1000" =>
-                        out1 <= "10001001100";
-                        out2 <= "01010111101";
-                    when "1001" =>
-                        out1 <= "10001001100";
-                        out2 <= "01001111010";
-                    when others =>
-                        out1 <= (others=>'X');
-                        out2 <= (others=>'X');
-                end case;    
-            else
-                -- si reset = '1', on met le output à 0
-                out1 <= (others => '0');
-                out2 <= (others => '0');
-            end if;
+        if (rst = '1') then
+            out1 <= (others => '0');
+            out2 <= (others => '0');
+        elsif rising_edge(clk) then
+            case key is
+                when "0000" =>
+                    out1 <= "01111100100";
+                    out2 <= "01010111101";
+                when "0001" =>
+                    out1 <= "10101000001";
+                    out2 <= "01100000111";
+                when "0010" =>
+                    out1 <= "10101000001";
+                    out2 <= "01010111101";
+                when "0011" =>
+                    out1 <= "10101000001";
+                    out2 <= "01001111010";
+                when "0100" =>
+                    out1 <= "10011000001";
+                    out2 <= "01100000111";
+                when "0101" =>
+                    out1 <= "10011000001";
+                    out2 <= "01010111101";
+                when "0110" =>
+                    out1 <= "10011000001";
+                    out2 <= "01001111010";
+                when "0111" =>
+                    out1 <= "10001001100";
+                    out2 <= "01100000111";
+                when "1000" =>
+                    out1 <= "10001001100";
+                    out2 <= "01010111101";
+                when "1001" =>
+                    out1 <= "10001001100";
+                    out2 <= "01001111010";
+                when others =>
+                    out1 <= (others=>'X');
+                    out2 <= (others=>'X');
+            end case;
         end if;
     end process;
 
