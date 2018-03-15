@@ -1,125 +1,118 @@
-|PmodKYPD
-clk => decoder:C0.clk
-clk => tick_mae:C1.clk
-clk => maet:C2.CLK
-clk => decodeur_frequences:C3.clk
-clk => tick_sin:C4.clk
-clk => tick_sin:C5.clk
-clk => counter_pointer:C6.clk
-clk => counter_pointer:C7.clk
-clk => full_adder_7:C8.clk
-clk => pwm:C9.clk
-clk => clk_out.DATAIN
-rst => tick_mae:C1.rst
-rst => maet:C2.rst
-Row[0] => decoder:C0.Row[0]
-Row[1] => decoder:C0.Row[1]
-Row[2] => decoder:C0.Row[2]
-Row[3] => decoder:C0.Row[3]
-sonde_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
-Col[0] <= decoder:C0.Col[0]
-Col[1] <= decoder:C0.Col[1]
-Col[2] <= decoder:C0.Col[2]
-Col[3] <= decoder:C0.Col[3]
-valeur[0] <= <GND>
-valeur[1] <= decoder:C0.DecodeOut[0]
-valeur[2] <= decoder:C0.DecodeOut[1]
-valeur[3] <= decoder:C0.DecodeOut[2]
-valeur[4] <= decoder:C0.DecodeOut[3]
-valeur[5] <= <GND>
-valeur[6] <= <GND>
-valeur[7] <= <GND>
-valeur[8] <= <GND>
-valeur[9] <= <GND>
-valeur[10] <= <GND>
-audio <= pwm:C9.Sortie
-clk_out <= clk.DB_MAX_OUTPUT_PORT_TYPE
+|DTMF
+Clk => ps2_ctrl:C0.Clk
+Clk => tick_mae:C1.clk
+Clk => maet:C2.rst
+Clk => decodeur_frequences:C3.clk
+Clk => tick_sin:C4.clk
+Clk => tick_sin:C5.clk
+Clk => counter_pointer:C6.clk
+Clk => counter_pointer:C7.clk
+Clk => full_adder_7:C8.clk
+Clk => pwm:C9.clk
+Reset => maet:C2.CLK
+Reset => tick_mae:C1.rst
+PS2_Clk => ps2_ctrl:C0.PS2_Clk
+PS2_Data => ps2_ctrl:C0.PS2_Data
+Display[0] <= ps2_ctrl:C0.Scan_Code[0]
+Display[1] <= ps2_ctrl:C0.Scan_Code[1]
+Display[2] <= ps2_ctrl:C0.Scan_Code[2]
+Display[3] <= ps2_ctrl:C0.Scan_Code[3]
+Display[4] <= ps2_ctrl:C0.Scan_Code[4]
+Display[5] <= ps2_ctrl:C0.Scan_Code[5]
+Display[6] <= ps2_ctrl:C0.Scan_Code[6]
+Display[7] <= ps2_ctrl:C0.Scan_Code[7]
+Audio <= pwm:C9.Sortie
 
 
-|PmodKYPD|Decoder:C0
-clk => Col[0]~reg0.CLK
-clk => Col[1]~reg0.CLK
-clk => Col[2]~reg0.CLK
-clk => Col[3]~reg0.CLK
-clk => DecodeOut[0]~reg0.CLK
-clk => DecodeOut[1]~reg0.CLK
-clk => DecodeOut[2]~reg0.CLK
-clk => DecodeOut[3]~reg0.CLK
-clk => sclk[0].CLK
-clk => sclk[1].CLK
-clk => sclk[2].CLK
-clk => sclk[3].CLK
-clk => sclk[4].CLK
-clk => sclk[5].CLK
-clk => sclk[6].CLK
-clk => sclk[7].CLK
-clk => sclk[8].CLK
-clk => sclk[9].CLK
-clk => sclk[10].CLK
-clk => sclk[11].CLK
-clk => sclk[12].CLK
-clk => sclk[13].CLK
-clk => sclk[14].CLK
-clk => sclk[15].CLK
-clk => sclk[16].CLK
-clk => sclk[17].CLK
-clk => sclk[18].CLK
-clk => sclk[19].CLK
-rst => DecodeOut[0]~reg0.ACLR
-rst => DecodeOut[1]~reg0.ACLR
-rst => DecodeOut[2]~reg0.ACLR
-rst => DecodeOut[3]~reg0.ACLR
-rst => sclk[0].ACLR
-rst => sclk[1].ACLR
-rst => sclk[2].ACLR
-rst => sclk[3].ACLR
-rst => sclk[4].ACLR
-rst => sclk[5].ACLR
-rst => sclk[6].ACLR
-rst => sclk[7].ACLR
-rst => sclk[8].ACLR
-rst => sclk[9].ACLR
-rst => sclk[10].ACLR
-rst => sclk[11].ACLR
-rst => sclk[12].ACLR
-rst => sclk[13].ACLR
-rst => sclk[14].ACLR
-rst => sclk[15].ACLR
-rst => sclk[16].ACLR
-rst => sclk[17].ACLR
-rst => sclk[18].ACLR
-rst => sclk[19].ACLR
-rst => Col[0]~reg0.ENA
-rst => Col[3]~reg0.ENA
-rst => Col[2]~reg0.ENA
-rst => Col[1]~reg0.ENA
-Row[0] => Equal8.IN7
-Row[0] => Equal9.IN7
-Row[0] => Equal10.IN7
-Row[0] => Equal11.IN7
-Row[1] => Equal8.IN6
-Row[1] => Equal9.IN6
-Row[1] => Equal10.IN6
-Row[1] => Equal11.IN6
-Row[2] => Equal8.IN5
-Row[2] => Equal9.IN5
-Row[2] => Equal10.IN5
-Row[2] => Equal11.IN5
-Row[3] => Equal8.IN4
-Row[3] => Equal9.IN4
-Row[3] => Equal10.IN4
-Row[3] => Equal11.IN4
-Col[0] <= Col[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Col[1] <= Col[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Col[2] <= Col[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Col[3] <= Col[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DecodeOut[0] <= DecodeOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DecodeOut[1] <= DecodeOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DecodeOut[2] <= DecodeOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DecodeOut[3] <= DecodeOut[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|DTMF|PS2_Ctrl:C0
+Clk => Scan_Err~reg0.CLK
+Clk => Scan_DAVi.CLK
+Clk => Parity.CLK
+Clk => Scan_Code[0]~reg0.CLK
+Clk => Scan_Code[1]~reg0.CLK
+Clk => Scan_Code[2]~reg0.CLK
+Clk => Scan_Code[3]~reg0.CLK
+Clk => Scan_Code[4]~reg0.CLK
+Clk => Scan_Code[5]~reg0.CLK
+Clk => Scan_Code[6]~reg0.CLK
+Clk => Scan_Code[7]~reg0.CLK
+Clk => S_Reg[0].CLK
+Clk => S_Reg[1].CLK
+Clk => S_Reg[2].CLK
+Clk => S_Reg[3].CLK
+Clk => S_Reg[4].CLK
+Clk => S_Reg[5].CLK
+Clk => S_Reg[6].CLK
+Clk => S_Reg[7].CLK
+Clk => S_Reg[8].CLK
+Clk => Bit_Cnt[0].CLK
+Clk => Bit_Cnt[1].CLK
+Clk => Bit_Cnt[2].CLK
+Clk => Bit_Cnt[3].CLK
+Clk => State.CLK
+Clk => Fall_Clk.CLK
+Clk => Filter[0].CLK
+Clk => Filter[1].CLK
+Clk => Filter[2].CLK
+Clk => Filter[3].CLK
+Clk => Filter[4].CLK
+Clk => Filter[5].CLK
+Clk => Filter[6].CLK
+Clk => Filter[7].CLK
+Clk => PS2_Clk_f.CLK
+Clk => PS2_Datr.CLK
+Reset => Scan_Err~reg0.ACLR
+Reset => Scan_DAVi.ACLR
+Reset => Parity.ACLR
+Reset => Scan_Code[0]~reg0.ACLR
+Reset => Scan_Code[1]~reg0.ACLR
+Reset => Scan_Code[2]~reg0.ACLR
+Reset => Scan_Code[3]~reg0.ACLR
+Reset => Scan_Code[4]~reg0.ACLR
+Reset => Scan_Code[5]~reg0.ACLR
+Reset => Scan_Code[6]~reg0.ACLR
+Reset => Scan_Code[7]~reg0.ACLR
+Reset => S_Reg[0].ACLR
+Reset => S_Reg[1].ACLR
+Reset => S_Reg[2].ACLR
+Reset => S_Reg[3].ACLR
+Reset => S_Reg[4].ACLR
+Reset => S_Reg[5].ACLR
+Reset => S_Reg[6].ACLR
+Reset => S_Reg[7].ACLR
+Reset => S_Reg[8].ACLR
+Reset => Bit_Cnt[0].ACLR
+Reset => Bit_Cnt[1].ACLR
+Reset => Bit_Cnt[2].ACLR
+Reset => Bit_Cnt[3].ACLR
+Reset => State.ACLR
+Reset => Fall_Clk.ACLR
+Reset => Filter[0].ACLR
+Reset => Filter[1].ACLR
+Reset => Filter[2].ACLR
+Reset => Filter[3].ACLR
+Reset => Filter[4].ACLR
+Reset => Filter[5].ACLR
+Reset => Filter[6].ACLR
+Reset => Filter[7].ACLR
+Reset => PS2_Clk_f.ACLR
+Reset => PS2_Datr.ACLR
+PS2_Clk => Filter[7].DATAIN
+PS2_Data => PS2_Datr.DATAIN
+DoRead => Scan_DAVi.OUTPUTSELECT
+Scan_Err <= Scan_Err~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_DAV <= Scan_DAVi.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[0] <= Scan_Code[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[1] <= Scan_Code[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[2] <= Scan_Code[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[3] <= Scan_Code[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[4] <= Scan_Code[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[5] <= Scan_Code[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[6] <= Scan_Code[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Scan_Code[7] <= Scan_Code[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|tick_mae:C1
+|DTMF|tick_mae:C1
 clk => s_out.CLK
 clk => i[0].CLK
 clk => i[1].CLK
@@ -197,11 +190,15 @@ div[23] => Equal0.IN0
 s <= s_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|MAET:C2
+|DTMF|MAET:C2
 CLK => TouchInit[0].CLK
 CLK => TouchInit[1].CLK
 CLK => TouchInit[2].CLK
 CLK => TouchInit[3].CLK
+CLK => TouchInit[4].CLK
+CLK => TouchInit[5].CLK
+CLK => TouchInit[6].CLK
+CLK => TouchInit[7].CLK
 CLK => RESET~reg0.CLK
 CLK => KEY[0]~reg0.CLK
 CLK => KEY[1]~reg0.CLK
@@ -241,49 +238,7 @@ CLK => i[30].CLK
 CLK => i[31].CLK
 CLK => EtatFutur~7.DATAIN
 CLK => EtatPresent~1.DATAIN
-rst => RESET~reg0.PRESET
-rst => KEY[0]~reg0.ACLR
-rst => KEY[1]~reg0.ACLR
-rst => KEY[2]~reg0.ACLR
-rst => KEY[3]~reg0.ACLR
-rst => i[0].PRESET
-rst => i[1].ACLR
-rst => i[2].ACLR
-rst => i[3].PRESET
-rst => i[4].ACLR
-rst => i[5].ACLR
-rst => i[6].ACLR
-rst => i[7].ACLR
-rst => i[8].ACLR
-rst => i[9].ACLR
-rst => i[10].ACLR
-rst => i[11].ACLR
-rst => i[12].ACLR
-rst => i[13].ACLR
-rst => i[14].ACLR
-rst => i[15].ACLR
-rst => i[16].ACLR
-rst => i[17].ACLR
-rst => i[18].ACLR
-rst => i[19].ACLR
-rst => i[20].ACLR
-rst => i[21].ACLR
-rst => i[22].ACLR
-rst => i[23].ACLR
-rst => i[24].ACLR
-rst => i[25].ACLR
-rst => i[26].ACLR
-rst => i[27].ACLR
-rst => i[28].ACLR
-rst => i[29].ACLR
-rst => i[30].ACLR
-rst => i[31].ACLR
-rst => EtatFutur~9.DATAIN
 rst => EtatPresent~3.DATAIN
-rst => TouchInit[0].ENA
-rst => TouchInit[3].ENA
-rst => TouchInit[2].ENA
-rst => TouchInit[1].ENA
 ENABLE => EtatFutur.OUTPUTSELECT
 ENABLE => EtatFutur.OUTPUTSELECT
 ENABLE => EtatFutur.OUTPUTSELECT
@@ -330,27 +285,41 @@ ENABLE => KEY.OUTPUTSELECT
 ENABLE => KEY.OUTPUTSELECT
 ENABLE => KEY.OUTPUTSELECT
 ENABLE => KEY.OUTPUTSELECT
-TOUCH[0] => LessThan0.IN8
+TOUCH[0] => Equal0.IN15
 TOUCH[0] => TouchInit.DATAA
-TOUCH[0] => KEY.DATAA
-TOUCH[1] => LessThan0.IN7
+TOUCH[0] => Mux16.IN5
+TOUCH[0] => Mux17.IN10
+TOUCH[0] => Mux18.IN10
+TOUCH[0] => Mux19.IN10
+TOUCH[1] => Equal0.IN14
 TOUCH[1] => TouchInit.DATAA
-TOUCH[1] => KEY.DATAA
-TOUCH[2] => LessThan0.IN6
+TOUCH[1] => Mux17.IN9
+TOUCH[1] => Mux18.IN9
+TOUCH[1] => Mux19.IN9
+TOUCH[2] => Equal0.IN13
 TOUCH[2] => TouchInit.DATAA
-TOUCH[2] => KEY.DATAA
-TOUCH[3] => LessThan0.IN5
+TOUCH[2] => Mux16.IN4
+TOUCH[2] => Mux17.IN8
+TOUCH[2] => Mux18.IN8
+TOUCH[3] => Equal0.IN12
 TOUCH[3] => TouchInit.DATAA
-TOUCH[3] => KEY.DATAA
+TOUCH[3] => Mux19.IN8
+TOUCH[4] => Equal0.IN11
+TOUCH[4] => TouchInit.DATAA
+TOUCH[5] => Equal0.IN10
+TOUCH[5] => TouchInit.DATAA
+TOUCH[6] => Equal0.IN9
+TOUCH[6] => TouchInit.DATAA
+TOUCH[7] => Equal0.IN8
+TOUCH[7] => TouchInit.DATAA
 KEY[0] <= KEY[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 KEY[1] <= KEY[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 KEY[2] <= KEY[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 KEY[3] <= KEY[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 RESET <= RESET~reg0.DB_MAX_OUTPUT_PORT_TYPE
-RESET_CLAVIER <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|decodeur_frequences:C3
+|DTMF|decodeur_frequences:C3
 clk => out2[0].CLK
 clk => out2[1].CLK
 clk => out2[2].CLK
@@ -467,7 +436,7 @@ div2[9] <= out2[9].DB_MAX_OUTPUT_PORT_TYPE
 div2[10] <= out2[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|tick_sin:C4
+|DTMF|tick_sin:C4
 clk => s_out.CLK
 clk => i[0].CLK
 clk => i[1].CLK
@@ -532,7 +501,7 @@ div[10] => Equal0.IN13
 s <= s_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|tick_sin:C5
+|DTMF|tick_sin:C5
 clk => s_out.CLK
 clk => i[0].CLK
 clk => i[1].CLK
@@ -597,7 +566,7 @@ div[10] => Equal0.IN13
 s <= s_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|counter_pointer:C6
+|DTMF|counter_pointer:C6
 clk => temp[0].CLK
 clk => temp[1].CLK
 clk => temp[2].CLK
@@ -627,7 +596,7 @@ count[4] <= temp[4].DB_MAX_OUTPUT_PORT_TYPE
 count[5] <= temp[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|counter_pointer:C7
+|DTMF|counter_pointer:C7
 clk => temp[0].CLK
 clk => temp[1].CLK
 clk => temp[2].CLK
@@ -657,7 +626,7 @@ count[4] <= temp[4].DB_MAX_OUTPUT_PORT_TYPE
 count[5] <= temp[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|full_adder_7:C8
+|DTMF|full_adder_7:C8
 A6[0] => TA[0].DATAIN
 A6[1] => TA[1].DATAIN
 A6[2] => TA[2].DATAIN
@@ -704,7 +673,7 @@ S7[5] <= FULLADDER:leloop:5:L0.S
 S7[6] <= FULLADDER:leloop:5:L0.C2
 
 
-|PmodKYPD|full_adder_7:C8|FULLADDER:\leloop:0:L0
+|DTMF|full_adder_7:C8|FULLADDER:\leloop:0:L0
 A => S.IN0
 A => C2.IN0
 B => S.IN1
@@ -715,7 +684,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 C2 <= C2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|full_adder_7:C8|FULLADDER:\leloop:1:L0
+|DTMF|full_adder_7:C8|FULLADDER:\leloop:1:L0
 A => S.IN0
 A => C2.IN0
 B => S.IN1
@@ -726,7 +695,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 C2 <= C2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|full_adder_7:C8|FULLADDER:\leloop:2:L0
+|DTMF|full_adder_7:C8|FULLADDER:\leloop:2:L0
 A => S.IN0
 A => C2.IN0
 B => S.IN1
@@ -737,7 +706,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 C2 <= C2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|full_adder_7:C8|FULLADDER:\leloop:3:L0
+|DTMF|full_adder_7:C8|FULLADDER:\leloop:3:L0
 A => S.IN0
 A => C2.IN0
 B => S.IN1
@@ -748,7 +717,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 C2 <= C2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|full_adder_7:C8|FULLADDER:\leloop:4:L0
+|DTMF|full_adder_7:C8|FULLADDER:\leloop:4:L0
 A => S.IN0
 A => C2.IN0
 B => S.IN1
@@ -759,7 +728,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 C2 <= C2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|full_adder_7:C8|FULLADDER:\leloop:5:L0
+|DTMF|full_adder_7:C8|FULLADDER:\leloop:5:L0
 A => S.IN0
 A => C2.IN0
 B => S.IN1
@@ -770,7 +739,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 C2 <= C2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PmodKYPD|pwm:C9
+|DTMF|pwm:C9
 clk => cnt[0].CLK
 clk => cnt[1].CLK
 clk => cnt[2].CLK
@@ -798,5 +767,47 @@ reset => cnt[6].PRESET
 reset => cnt[7].PRESET
 reset => s.ACLR
 Sortie <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DTMF|SevenSeg:C10
+Data[0] => Mux0.IN19
+Data[0] => Mux1.IN19
+Data[0] => Mux2.IN10
+Data[0] => Mux3.IN19
+Data[0] => Mux4.IN10
+Data[0] => Mux5.IN10
+Data[0] => Mux6.IN19
+Data[1] => Mux0.IN18
+Data[1] => Mux1.IN18
+Data[1] => Mux2.IN9
+Data[1] => Mux3.IN18
+Data[1] => Mux4.IN9
+Data[1] => Mux5.IN9
+Data[1] => Mux6.IN18
+Data[2] => Mux0.IN17
+Data[2] => Mux1.IN17
+Data[2] => Mux2.IN8
+Data[2] => Mux3.IN17
+Data[2] => Mux4.IN8
+Data[2] => Mux5.IN8
+Data[2] => Mux6.IN17
+Data[3] => Mux0.IN16
+Data[3] => Mux1.IN16
+Data[3] => Mux3.IN16
+Data[3] => Mux6.IN16
+Pol => Segout.IN1
+Pol => Segout.IN1
+Pol => Segout.IN1
+Pol => Segout.IN1
+Pol => Segout.IN1
+Pol => Segout.IN1
+Pol => Segout.IN1
+Segout[7] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
+Segout[6] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
+Segout[5] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
+Segout[4] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
+Segout[3] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
+Segout[2] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
+Segout[1] <= Segout.DB_MAX_OUTPUT_PORT_TYPE
 
 

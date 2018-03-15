@@ -1,0 +1,39 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity MAET is 
+  port (
+    CLK,rst: in std_logic;
+    ENABLE : in std_logic;
+    TOUCH : in std_logic_vector (7 downto 0);
+    KEY : out std_logic_vector (3 downto 0);
+    RESET : out std_logic
+  );
+end entity MAET;
+  
+  architecture MAET_A of MAET is 
+  
+  type state_type is (init,etat0,etat1,etat2,etat3,etat4);
+    
+constant A : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110111";
+constant B : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110110";
+constant C : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110101";
+constant D : std_logic_vector (39 downto 0) := "0000011010010101100000101000010100110100";
+ signal EtatPresent : state_type := init;
+ signal EtatFutur : state_type;
+ signal i : integer;
+ signal TouchInit : std_logic_vector (7 downto 0);
+ 
+ begin
+    
+    process (CLK,rst)
+      begin
+		if rst = '1' then 
+			EtatPresent <= Init;
+       elsif rising_edge (CLK) then
+         EtatPresent <= EtatFutur;
+      end if;
+    end process;
+        
+  end MAET_A;

@@ -46,10 +46,9 @@ signal enable_compteur1, enable_compteur2 : std_LOGIC;
 signal count1, count2 : STD_LOGIC_VECTOR (5 downto 0);
 begin
 	
-	C0: entity work.Decoder port map (rst=>RESET, clk=>clk, Row =>Row, Col=>Col, DecodeOut=> Decode);
 	-- decode 101101110001101100
 	C1: entity work.tick_mae port map (rst=>rst, clk => clk, div => "101101110001101100000000", s => enable);
-	C2: entity work.MAET port map (rst=>rst, CLK => clk, ENABLE => enable, TOUCH => decode, KEY => key, RESET => reset, RESET_CLAVIER => reset_entree_clavier);
+	C2: entity work.MAET port map (rst=>rst, CLK => clk, ENABLE => enable, TOUCH => decode, KEY => key, RESET => reset);
 	C3: entity work.decodeur_frequences port map (clk, reset, key, div1, div2);
 	C4: entity work.tick_sin port map (clk, reset, div1, enable_compteur1);
 	C5: entity work.tick_sin port map (clk, reset, div2, enable_compteur2);

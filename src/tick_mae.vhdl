@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity tick_mae is
     port (
         clk, rst : in std_logic;
-        -- div = Fclk / (Fsin) (23 bits pour la mae)
+        -- div = Fclk / (Fsin) (24 bits pour la mae)
         div : in std_logic_vector (23 downto 0);
         s : out std_logic
     );

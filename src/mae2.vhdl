@@ -2,7 +2,7 @@ Library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
-entity MAET is 
+entity MAET2 is 
   port (
     CLK,rst: in std_logic;
     ENABLE : in std_logic;
@@ -10,9 +10,9 @@ entity MAET is
     KEY : out std_logic_vector (3 downto 0);
     RESET : out std_logic
   );
-end entity MAET;
+end entity MAET2;
   
-  architecture MAET_A of MAET is 
+  architecture MAET_A of MAET2 is 
   
   type state_type is (init,etat0,etat1,etat2,etat3,etat4);
     

@@ -1,14 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Mar  7 17:18:25 2018
+Analysis & Synthesis Status : Successful - Thu Mar 15 12:37:01 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : Carte_dtmf
-Top-level Entity Name : PmodKYPD
-Family : Cyclone II
-Total logic elements : 402
-    Total combinational functions : 380
-    Dedicated logic registers : 204
-Total registers : 204
-Total pins : 24
+Top-level Entity Name : DTMF
+Family : Cyclone
+Total logic elements : 370
+Total pins : 13
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

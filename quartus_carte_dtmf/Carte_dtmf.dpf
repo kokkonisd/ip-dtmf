@@ -2,6 +2,22 @@
 
 <pin_planner>
 	<pin_info>
+		<pin name="Scan_Code[7]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[6]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[5]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[4]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[3]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[2]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[1]" source="Pin Planner" >
+		</pin>
+		<pin name="Scan_Code[0]" source="Pin Planner" >
+		</pin>
 		<pin name="test_enable" source="Pin Planner" >
 		</pin>
 	</pin_info>

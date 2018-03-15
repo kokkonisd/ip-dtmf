@@ -1,5 +1,5 @@
 
-State Machine - |PmodKYPD|MAET:C2|EtatFutur
+State Machine - |DTMF|MAET:C2|EtatFutur
 Name EtatFutur.etat4 EtatFutur.etat3 EtatFutur.etat2 EtatFutur.etat1 EtatFutur.etat0 EtatFutur.init 
 EtatFutur.init 0 0 0 0 0 0 
 EtatFutur.etat0 0 0 0 0 1 1 
@@ -8,7 +8,7 @@ EtatFutur.etat2 0 0 1 0 0 1
 EtatFutur.etat3 0 1 0 0 0 1 
 EtatFutur.etat4 1 0 0 0 0 1 
 
-State Machine - |PmodKYPD|MAET:C2|EtatPresent
+State Machine - |DTMF|MAET:C2|EtatPresent
 Name EtatPresent.etat4 EtatPresent.etat3 EtatPresent.etat2 EtatPresent.etat1 EtatPresent.etat0 EtatPresent.init 
 EtatPresent.init 0 0 0 0 0 0 
 EtatPresent.etat0 0 0 0 0 1 1 
