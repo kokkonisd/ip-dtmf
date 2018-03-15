@@ -1,0 +1,9 @@
+
+State Machine - |machine|etatP
+Name etatP.e5 etatP.e4 etatP.e3 etatP.e2 etatP.e1 etatP.e0 
+etatP.e0 0 0 0 0 0 0 
+etatP.e1 0 0 0 0 1 1 
+etatP.e2 0 0 0 1 0 1 
+etatP.e3 0 0 1 0 0 1 
+etatP.e4 0 1 0 0 0 1 
+etatP.e5 1 0 0 0 0 1 

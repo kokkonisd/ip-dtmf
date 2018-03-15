@@ -1,0 +1,46 @@
+/nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/DisplayController.vhd {1 {vcom -work work -2002 -explicit /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/DisplayController.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity DisplayController
+-- Compiling architecture Behavioral of DisplayController
+
+} {} {}} /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/Decoder.vhd {1 {vcom -work work -2002 -explicit /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/Decoder.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Decoder
+-- Compiling architecture Behavioral of Decoder
+
+} {} {}} /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/PmodKYPD.vhd {1 {vcom -work work -2002 -explicit /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/PmodKYPD.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity PmodKYPD
+-- Compiling architecture Behavioral of PmodKYPD
+
+} {} {}} /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/machine.vhd {0 {vcom -work work -2002 -explicit /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/machine.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_textio
+-- Loading package NUMERIC_STD
+-- Compiling entity machine
+-- Compiling architecture dataflow of machine
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity PmodKYPD
+** Error: /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/machine.vhd(58): No feasible entries for subprogram "ROTATE_LEFT".
+** Error: /nfs/home/sasl/eleves/ei-se/3700758/TP_ELEC_NUM/PROJET/machine.vhd(123): VHDL Compiler exiting
+
+} {13.0 15.0} {}}

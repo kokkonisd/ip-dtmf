@@ -1,0 +1,1656 @@
+TimeQuest Timing Analyzer report for Carte_dtmf
+Wed Mar  7 17:18:36 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Recovery: 'clk'
+ 14. Slow Model Removal: 'clk'
+ 15. Slow Model Minimum Pulse Width: 'clk'
+ 16. Setup Times
+ 17. Hold Times
+ 18. Clock to Output Times
+ 19. Minimum Clock to Output Times
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clk'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Recovery: 'clk'
+ 28. Fast Model Removal: 'clk'
+ 29. Fast Model Minimum Pulse Width: 'clk'
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Recovery Transfers
+ 42. Removal Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; Carte_dtmf                                                         ;
+; Device Family      ; Cyclone II                                                         ;
+; Device Name        ; EP2C20F484C7                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Combined                                                           ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 173.22 MHz ; 173.22 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.773 ; -551.657      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Slow Model Recovery Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.041 ; -109.422      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Removal Summary    ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.184 ; 0.000         ;
++-------+-------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -250.919              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                      ;
++--------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -4.773 ; MAET:C2|i[25]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.818      ;
+; -4.731 ; MAET:C2|i[24]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.776      ;
+; -4.711 ; MAET:C2|i[3]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.754      ;
+; -4.700 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.740      ;
+; -4.700 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.740      ;
+; -4.677 ; MAET:C2|i[18]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.720      ;
+; -4.673 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.713      ;
+; -4.673 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.713      ;
+; -4.668 ; MAET:C2|i[1]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.711      ;
+; -4.658 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.698      ;
+; -4.657 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.700      ;
+; -4.657 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.700      ;
+; -4.657 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.700      ;
+; -4.651 ; MAET:C2|i[8]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.004      ; 5.693      ;
+; -4.640 ; MAET:C2|i[21]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.683      ;
+; -4.631 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.671      ;
+; -4.614 ; MAET:C2|i[28]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.659      ;
+; -4.592 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.635      ;
+; -4.592 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.635      ;
+; -4.592 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.635      ;
+; -4.590 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.633      ;
+; -4.573 ; MAET:C2|i[26]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.618      ;
+; -4.568 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.608      ;
+; -4.568 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.608      ;
+; -4.550 ; MAET:C2|i[10]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.004      ; 5.592      ;
+; -4.549 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.005      ; 5.592      ;
+; -4.549 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.005      ; 5.592      ;
+; -4.540 ; MAET:C2|i[30]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.585      ;
+; -4.526 ; Decoder:C0|sclk[1]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.566      ;
+; -4.525 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.568      ;
+; -4.518 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.558      ;
+; -4.508 ; MAET:C2|i[11]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.004      ; 5.550      ;
+; -4.496 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.536      ;
+; -4.496 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.536      ;
+; -4.496 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.536      ;
+; -4.491 ; MAET:C2|i[23]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.536      ;
+; -4.491 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.531      ;
+; -4.484 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.005      ; 5.527      ;
+; -4.484 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.005      ; 5.527      ;
+; -4.445 ; MAET:C2|i[14]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.004      ; 5.487      ;
+; -4.445 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.485      ;
+; -4.445 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.485      ;
+; -4.445 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.485      ;
+; -4.442 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.481      ;
+; -4.442 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.481      ;
+; -4.440 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.480      ;
+; -4.429 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.469      ;
+; -4.415 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.454      ;
+; -4.415 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.454      ;
+; -4.413 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.453      ;
+; -4.409 ; MAET:C2|i[15]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.004      ; 5.451      ;
+; -4.398 ; MAET:C2|i[17]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.441      ;
+; -4.395 ; MAET:C2|i[20]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.438      ;
+; -4.393 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.433      ;
+; -4.393 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.433      ;
+; -4.393 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.433      ;
+; -4.393 ; MAET:C2|i[6]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.436      ;
+; -4.386 ; Decoder:C0|sclk[1]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.426      ;
+; -4.380 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.423      ;
+; -4.380 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.423      ;
+; -4.380 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.423      ;
+; -4.378 ; MAET:C2|i[22]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.423      ;
+; -4.378 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.418      ;
+; -4.361 ; Decoder:C0|sclk[5]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.401      ;
+; -4.361 ; Decoder:C0|sclk[5]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.401      ;
+; -4.328 ; MAET:C2|i[27]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.373      ;
+; -4.326 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.366      ;
+; -4.324 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.364      ;
+; -4.319 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.359      ;
+; -4.319 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.359      ;
+; -4.319 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.359      ;
+; -4.313 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.356      ;
+; -4.310 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.349      ;
+; -4.310 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.349      ;
+; -4.308 ; Decoder:C0|sclk[1]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.348      ;
+; -4.297 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.337      ;
+; -4.295 ; MAET:C2|i[19]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.338      ;
+; -4.294 ; MAET:C2|i[0]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 5.330      ;
+; -4.291 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.004      ; 5.333      ;
+; -4.291 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.004      ; 5.333      ;
+; -4.283 ; MAET:C2|i[16]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 5.326      ;
+; -4.278 ; Decoder:C0|sclk[2]  ; Decoder:C0|sclk[17]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.316      ;
+; -4.274 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.317      ;
+; -4.274 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.317      ;
+; -4.274 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.317      ;
+; -4.269 ; MAET:C2|i[13]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.004      ; 5.311      ;
+; -4.252 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.292      ;
+; -4.251 ; Decoder:C0|sclk[0]  ; Decoder:C0|sclk[17]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.289      ;
+; -4.226 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.004      ; 5.268      ;
+; -4.226 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.004      ; 5.268      ;
+; -4.224 ; MAET:C2|i[29]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.007      ; 5.269      ;
+; -4.222 ; Decoder:C0|sclk[9]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.262      ;
+; -4.222 ; Decoder:C0|sclk[9]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.262      ;
+; -4.221 ; MAET:C2|i[1]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 5.257      ;
+; -4.220 ; Decoder:C0|sclk[15] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.263      ;
+; -4.220 ; Decoder:C0|sclk[15] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.263      ;
+; -4.220 ; Decoder:C0|sclk[15] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.263      ;
+; -4.211 ; Decoder:C0|sclk[4]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.251      ;
+; -4.211 ; Decoder:C0|sclk[4]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.251      ;
+; -4.207 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.005      ; 5.250      ;
++--------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; MAET:C2|EtatFutur.init     ; MAET:C2|EtatFutur.init     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; MAET:C2|EtatFutur.etat0    ; MAET:C2|EtatFutur.etat0    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; MAET:C2|EtatFutur.etat3    ; MAET:C2|EtatFutur.etat3    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; MAET:C2|EtatFutur.etat2    ; MAET:C2|EtatFutur.etat2    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; MAET:C2|RESET              ; MAET:C2|RESET              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.618 ; MAET:C2|EtatFutur.etat3    ; MAET:C2|EtatPresent.etat3  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.904      ;
+; 0.624 ; MAET:C2|EtatFutur.etat4    ; MAET:C2|EtatPresent.etat4  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.624 ; counter_pointer:C6|temp[6] ; counter_pointer:C6|temp[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.629 ; counter_pointer:C7|temp[6] ; counter_pointer:C7|temp[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.633 ; Decoder:C0|sclk[19]        ; Decoder:C0|sclk[19]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.633 ; tick_sin:C4|i[23]          ; tick_sin:C4|i[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.637 ; tick_sin:C5|i[23]          ; tick_sin:C5|i[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.923      ;
+; 0.659 ; MAET:C2|EtatPresent.etat2  ; MAET:C2|EtatFutur.etat4    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.945      ;
+; 0.667 ; MAET:C2|EtatPresent.etat2  ; MAET:C2|EtatFutur.etat1    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.953      ;
+; 0.771 ; MAET:C2|EtatFutur.etat2    ; MAET:C2|EtatPresent.etat2  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 0.776 ; MAET:C2|EtatFutur.etat0    ; MAET:C2|EtatPresent.etat0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.786 ; MAET:C2|EtatFutur.init     ; MAET:C2|EtatPresent.init   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.786 ; MAET:C2|EtatFutur.etat1    ; MAET:C2|EtatPresent.etat1  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.888 ; tick_sin:C4|i[23]          ; tick_sin:C4|s_out          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.174      ;
+; 0.892 ; tick_sin:C5|i[23]          ; tick_sin:C5|s_out          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.178      ;
+; 0.967 ; tick_sin:C5|i[12]          ; tick_sin:C5|i[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.253      ;
+; 0.968 ; tick_mae:C1|i[10]          ; tick_mae:C1|i[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; Decoder:C0|sclk[5]         ; Decoder:C0|sclk[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; tick_sin:C4|i[12]          ; tick_sin:C4|i[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.971 ; tick_sin:C4|i[5]           ; tick_sin:C4|i[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.257      ;
+; 0.971 ; tick_sin:C5|i[5]           ; tick_sin:C5|i[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.257      ;
+; 0.972 ; tick_mae:C1|i[14]          ; tick_mae:C1|i[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; tick_mae:C1|i[19]          ; tick_mae:C1|i[19]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; tick_sin:C5|i[0]           ; tick_sin:C5|i[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; tick_sin:C5|i[3]           ; tick_sin:C5|i[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.974 ; Decoder:C0|sclk[10]        ; Decoder:C0|sclk[10]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.260      ;
+; 0.975 ; tick_mae:C1|i[13]          ; tick_mae:C1|i[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.261      ;
+; 0.976 ; tick_mae:C1|i[3]           ; tick_mae:C1|i[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; Decoder:C0|sclk[14]        ; Decoder:C0|sclk[14]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; tick_sin:C4|i[3]           ; tick_sin:C4|i[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; tick_sin:C4|i[7]           ; tick_sin:C4|i[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; tick_sin:C4|i[10]          ; tick_sin:C4|i[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; tick_sin:C5|i[7]           ; tick_sin:C5|i[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; tick_sin:C5|i[10]          ; tick_sin:C5|i[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.977 ; Decoder:C0|sclk[1]         ; Decoder:C0|sclk[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.980 ; tick_sin:C4|i[19]          ; tick_sin:C4|i[19]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.980 ; tick_sin:C4|i[21]          ; tick_sin:C4|i[21]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.980 ; counter_pointer:C6|temp[0] ; counter_pointer:C6|temp[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.980 ; tick_sin:C5|i[14]          ; tick_sin:C5|i[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.980 ; tick_sin:C5|i[19]          ; tick_sin:C5|i[19]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.981 ; tick_sin:C4|i[0]           ; tick_sin:C4|i[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; tick_sin:C4|i[9]           ; tick_sin:C4|i[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; tick_sin:C4|i[11]          ; tick_sin:C4|i[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; tick_sin:C4|i[16]          ; tick_sin:C4|i[16]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; tick_sin:C5|i[9]           ; tick_sin:C5|i[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; tick_sin:C5|i[11]          ; tick_sin:C5|i[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.982 ; tick_sin:C5|i[13]          ; tick_sin:C5|i[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.268      ;
+; 0.983 ; tick_mae:C1|i[5]           ; tick_mae:C1|i[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
+; 0.983 ; tick_sin:C4|i[13]          ; tick_sin:C4|i[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
+; 0.984 ; tick_mae:C1|i[7]           ; tick_mae:C1|i[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; tick_sin:C5|i[21]          ; tick_sin:C5|i[21]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; counter_pointer:C7|temp[5] ; counter_pointer:C7|temp[5] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; pwm:C9|cnt[1]              ; pwm:C9|cnt[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; pwm:C9|cnt[3]              ; pwm:C9|cnt[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; pwm:C9|cnt[5]              ; pwm:C9|cnt[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.985 ; tick_sin:C4|i[14]          ; tick_sin:C4|i[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 0.985 ; tick_sin:C5|i[16]          ; tick_sin:C5|i[16]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 0.987 ; counter_pointer:C6|temp[2] ; counter_pointer:C6|temp[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.273      ;
+; 0.987 ; counter_pointer:C7|temp[1] ; counter_pointer:C7|temp[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.273      ;
+; 0.988 ; counter_pointer:C6|temp[4] ; counter_pointer:C6|temp[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 0.988 ; counter_pointer:C7|temp[3] ; counter_pointer:C7|temp[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 0.993 ; Decoder:C0|sclk[8]         ; Decoder:C0|sclk[8]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.279      ;
+; 0.998 ; MAET:C2|EtatPresent.etat1  ; MAET:C2|EtatFutur.etat4    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.284      ;
+; 0.998 ; MAET:C2|EtatPresent.etat1  ; MAET:C2|EtatFutur.etat1    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.284      ;
+; 1.011 ; tick_mae:C1|i[15]          ; tick_mae:C1|i[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.297      ;
+; 1.011 ; tick_sin:C4|i[1]           ; tick_sin:C4|i[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.297      ;
+; 1.012 ; tick_sin:C5|i[1]           ; tick_sin:C5|i[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.012 ; tick_sin:C5|i[2]           ; tick_sin:C5|i[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.012 ; tick_sin:C5|i[15]          ; tick_sin:C5|i[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.012 ; tick_sin:C5|i[17]          ; tick_sin:C5|i[17]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.014 ; tick_sin:C4|i[4]           ; tick_sin:C4|i[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.014 ; tick_sin:C5|i[4]           ; tick_sin:C5|i[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.015 ; tick_mae:C1|i[22]          ; tick_mae:C1|i[22]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.301      ;
+; 1.016 ; tick_sin:C4|i[2]           ; tick_sin:C4|i[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.017 ; tick_mae:C1|i[4]           ; tick_mae:C1|i[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.303      ;
+; 1.017 ; Decoder:C0|sclk[2]         ; Decoder:C0|sclk[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.303      ;
+; 1.018 ; tick_mae:C1|i[6]           ; tick_mae:C1|i[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.304      ;
+; 1.018 ; Decoder:C0|sclk[16]        ; Decoder:C0|sclk[16]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.304      ;
+; 1.018 ; tick_sin:C5|i[20]          ; tick_sin:C5|i[20]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.304      ;
+; 1.019 ; tick_sin:C4|i[6]           ; tick_sin:C4|i[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; tick_sin:C4|i[15]          ; tick_sin:C4|i[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; tick_sin:C4|i[17]          ; tick_sin:C4|i[17]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; tick_sin:C4|i[20]          ; tick_sin:C4|i[20]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; tick_sin:C4|i[22]          ; tick_sin:C4|i[22]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; tick_sin:C5|i[6]           ; tick_sin:C5|i[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; tick_sin:C5|i[22]          ; tick_sin:C5|i[22]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.020 ; Decoder:C0|sclk[15]        ; Decoder:C0|sclk[15]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.306      ;
+; 1.020 ; tick_sin:C4|i[8]           ; tick_sin:C4|i[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.306      ;
+; 1.020 ; tick_sin:C5|i[8]           ; tick_sin:C5|i[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.306      ;
+; 1.022 ; pwm:C9|cnt[2]              ; pwm:C9|cnt[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.023 ; tick_mae:C1|i[2]           ; tick_mae:C1|i[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.023 ; pwm:C9|cnt[4]              ; pwm:C9|cnt[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.024 ; tick_mae:C1|i[1]           ; tick_mae:C1|i[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.310      ;
+; 1.024 ; tick_sin:C4|i[18]          ; tick_sin:C4|i[18]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.310      ;
+; 1.029 ; counter_pointer:C6|temp[1] ; counter_pointer:C6|temp[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.315      ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clk'                                                                                                     ;
++--------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.041 ; MAET:C2|RESET ; pwm:C9|cnt[0]                   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TA[1]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TA[0]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TB[0]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TB[1]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TA[2]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TB[2]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; full_adder_7:C8|TA[3]           ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.041 ; MAET:C2|RESET ; pwm:C9|s                        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.080      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[12]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[13]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[14]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[15]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[16]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[17]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[18]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[19]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[20]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[21]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[22]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|i[23]               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.040 ; MAET:C2|RESET ; tick_sin:C5|s_out               ; clk          ; clk         ; 1.000        ; -0.006     ; 2.072      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[16]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[14]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[18]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[19]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[12]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[10]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.029 ; MAET:C2|RESET ; Decoder:C0|sclk[15]             ; clk          ; clk         ; 1.000        ; -0.005     ; 2.062      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[0]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[1]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[2]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[3]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[4]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[5]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[6]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[7]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[8]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[9]                ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[10]               ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.017 ; MAET:C2|RESET ; tick_sin:C5|i[11]               ; clk          ; clk         ; 1.000        ; -0.003     ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[0]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[1]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[2]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[3]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[4]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[5]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[6]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[7]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[8]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[9]                ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[10]               ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; tick_sin:C4|i[11]               ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[8]  ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[9]  ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[1]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[2]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[3]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[4]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[5]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[6]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; pwm:C9|cnt[7]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; full_adder_7:C8|TA[4]           ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; full_adder_7:C8|TB[4]           ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -1.012 ; MAET:C2|RESET ; full_adder_7:C8|TA[5]           ; clk          ; clk         ; 1.000        ; 0.002      ; 2.052      ;
+; -0.988 ; MAET:C2|RESET ; Decoder:C0|sclk[13]             ; clk          ; clk         ; 1.000        ; -0.001     ; 2.025      ;
+; -0.984 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[3]         ; clk          ; clk         ; 1.000        ; 0.000      ; 2.022      ;
+; -0.984 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[2]         ; clk          ; clk         ; 1.000        ; 0.000      ; 2.022      ;
+; -0.984 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[0]         ; clk          ; clk         ; 1.000        ; 0.000      ; 2.022      ;
+; -0.967 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[1]         ; clk          ; clk         ; 1.000        ; 0.000      ; 2.005      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[11]             ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[17]             ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[5]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[4]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[7]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[9]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[2]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[6]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[8]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[3]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[1]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.966 ; MAET:C2|RESET ; Decoder:C0|sclk[0]              ; clk          ; clk         ; 1.000        ; -0.002     ; 2.002      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[0]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[1]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[3]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[4]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[5]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[6]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.686 ; MAET:C2|RESET ; counter_pointer:C7|temp[2]      ; clk          ; clk         ; 1.000        ; -0.002     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[0]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[1]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[3]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[4]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[5]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[6]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; counter_pointer:C6|temp[2]      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
+; -0.685 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[2]  ; clk          ; clk         ; 1.000        ; -0.001     ; 1.722      ;
++--------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clk'                                                                                                     ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node     ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; full_adder_7:C8|TB[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.184 ; MAET:C2|RESET ; full_adder_7:C8|TB[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[12]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[13]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[14]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[15]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[16]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[17]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[18]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[19]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[20]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[21]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[22]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|i[23]               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.427 ; MAET:C2|RESET ; tick_sin:C4|s_out               ; clk          ; clk         ; 0.000        ; 0.001      ; 1.714      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[0]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[1]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[3]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[4]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[5]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[6]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; counter_pointer:C6|temp[2]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[5]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[2]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.437 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[1]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[0]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[1]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[3]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[4]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[5]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[6]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.438 ; MAET:C2|RESET ; counter_pointer:C7|temp[2]      ; clk          ; clk         ; 0.000        ; -0.002     ; 1.722      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[11]             ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[17]             ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[5]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[4]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[7]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[9]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[2]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[6]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[8]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[3]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[1]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.718 ; MAET:C2|RESET ; Decoder:C0|sclk[0]              ; clk          ; clk         ; 0.000        ; -0.002     ; 2.002      ;
+; 1.719 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.005      ;
+; 1.736 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.022      ;
+; 1.736 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.022      ;
+; 1.736 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.022      ;
+; 1.740 ; MAET:C2|RESET ; Decoder:C0|sclk[13]             ; clk          ; clk         ; 0.000        ; -0.001     ; 2.025      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[0]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[1]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[2]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[3]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[4]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[5]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[6]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[7]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[8]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[9]                ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[10]               ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; tick_sin:C4|i[11]               ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[10] ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[9]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[3]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[1]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[2]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[3]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[4]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[5]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[6]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; pwm:C9|cnt[7]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; full_adder_7:C8|TA[4]           ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; full_adder_7:C8|TB[4]           ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.764 ; MAET:C2|RESET ; full_adder_7:C8|TA[5]           ; clk          ; clk         ; 0.000        ; 0.002      ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[0]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[1]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[2]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[3]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[4]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[5]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[6]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[7]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[8]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[9]                ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[10]               ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.769 ; MAET:C2|RESET ; tick_sin:C5|i[11]               ; clk          ; clk         ; 0.000        ; -0.003     ; 2.052      ;
+; 1.781 ; MAET:C2|RESET ; Decoder:C0|sclk[16]             ; clk          ; clk         ; 0.000        ; -0.005     ; 2.062      ;
+; 1.781 ; MAET:C2|RESET ; Decoder:C0|sclk[14]             ; clk          ; clk         ; 0.000        ; -0.005     ; 2.062      ;
+; 1.781 ; MAET:C2|RESET ; Decoder:C0|sclk[18]             ; clk          ; clk         ; 0.000        ; -0.005     ; 2.062      ;
+; 1.781 ; MAET:C2|RESET ; Decoder:C0|sclk[19]             ; clk          ; clk         ; 0.000        ; -0.005     ; 2.062      ;
+; 1.781 ; MAET:C2|RESET ; Decoder:C0|sclk[12]             ; clk          ; clk         ; 0.000        ; -0.005     ; 2.062      ;
+; 1.781 ; MAET:C2|RESET ; Decoder:C0|sclk[10]             ; clk          ; clk         ; 0.000        ; -0.005     ; 2.062      ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[0]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[0]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[1]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[1]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[2]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[2]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[3]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[3]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[10]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[10]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[11]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[11]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[12]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[12]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[13]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[13]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[14]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[14]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[15]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[15]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[16]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[16]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[17]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[17]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[18]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[18]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[19]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[19]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[1]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[1]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[2]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[2]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[3]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[3]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[4]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[4]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[5]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[5]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[6]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[6]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[7]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[7]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[8]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[8]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[9]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[9]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat0   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat0   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat1   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat1   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat2   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat2   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat3   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat3   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat4   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat4   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.init    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.init    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat0 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat0 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat1 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat1 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat2 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat2 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat3 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat3 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat4 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat4 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.init  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.init  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[0]            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[0]            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[1]            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[1]            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[2]            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[2]            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[3]            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[3]            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|RESET             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|RESET             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|TouchInit[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|TouchInit[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|TouchInit[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|TouchInit[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|TouchInit[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|TouchInit[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|i[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|i[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|i[10]             ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Row[*]    ; clk        ; 8.606 ; 8.606 ; Rise       ; clk             ;
+;  Row[0]   ; clk        ; 8.518 ; 8.518 ; Rise       ; clk             ;
+;  Row[1]   ; clk        ; 8.004 ; 8.004 ; Rise       ; clk             ;
+;  Row[2]   ; clk        ; 8.523 ; 8.523 ; Rise       ; clk             ;
+;  Row[3]   ; clk        ; 8.606 ; 8.606 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.636 ; 0.636 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Row[*]    ; clk        ; -4.810 ; -4.810 ; Rise       ; clk             ;
+;  Row[0]   ; clk        ; -5.414 ; -5.414 ; Rise       ; clk             ;
+;  Row[1]   ; clk        ; -4.810 ; -4.810 ; Rise       ; clk             ;
+;  Row[2]   ; clk        ; -5.365 ; -5.365 ; Rise       ; clk             ;
+;  Row[3]   ; clk        ; -5.406 ; -5.406 ; Rise       ; clk             ;
+; rst       ; clk        ; -0.388 ; -0.388 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; Col[*]     ; clk        ; 7.754  ; 7.754  ; Rise       ; clk             ;
+;  Col[0]    ; clk        ; 7.379  ; 7.379  ; Rise       ; clk             ;
+;  Col[1]    ; clk        ; 7.754  ; 7.754  ; Rise       ; clk             ;
+;  Col[2]    ; clk        ; 7.483  ; 7.483  ; Rise       ; clk             ;
+;  Col[3]    ; clk        ; 7.424  ; 7.424  ; Rise       ; clk             ;
+; audio      ; clk        ; 10.902 ; 10.902 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 5.854  ; 5.854  ; Rise       ; clk             ;
+; valeur[*]  ; clk        ; 7.868  ; 7.868  ; Rise       ; clk             ;
+;  valeur[1] ; clk        ; 6.801  ; 6.801  ; Rise       ; clk             ;
+;  valeur[2] ; clk        ; 7.164  ; 7.164  ; Rise       ; clk             ;
+;  valeur[3] ; clk        ; 7.570  ; 7.570  ; Rise       ; clk             ;
+;  valeur[4] ; clk        ; 7.868  ; 7.868  ; Rise       ; clk             ;
+; clk_out    ; clk        ; 5.854  ; 5.854  ; Fall       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; Col[*]     ; clk        ; 7.379  ; 7.379  ; Rise       ; clk             ;
+;  Col[0]    ; clk        ; 7.379  ; 7.379  ; Rise       ; clk             ;
+;  Col[1]    ; clk        ; 7.754  ; 7.754  ; Rise       ; clk             ;
+;  Col[2]    ; clk        ; 7.483  ; 7.483  ; Rise       ; clk             ;
+;  Col[3]    ; clk        ; 7.424  ; 7.424  ; Rise       ; clk             ;
+; audio      ; clk        ; 10.902 ; 10.902 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 5.854  ; 5.854  ; Rise       ; clk             ;
+; valeur[*]  ; clk        ; 6.801  ; 6.801  ; Rise       ; clk             ;
+;  valeur[1] ; clk        ; 6.801  ; 6.801  ; Rise       ; clk             ;
+;  valeur[2] ; clk        ; 7.164  ; 7.164  ; Rise       ; clk             ;
+;  valeur[3] ; clk        ; 7.570  ; 7.570  ; Rise       ; clk             ;
+;  valeur[4] ; clk        ; 7.868  ; 7.868  ; Rise       ; clk             ;
+; clk_out    ; clk        ; 5.854  ; 5.854  ; Fall       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.235 ; -105.768      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Recovery Summary   ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.056 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Removal Summary    ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.587 ; 0.000         ;
++-------+-------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -205.380              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                      ;
++--------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -1.235 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.271      ;
+; -1.235 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.271      ;
+; -1.235 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.271      ;
+; -1.225 ; MAET:C2|i[0]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.255      ;
+; -1.223 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.256      ;
+; -1.223 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.256      ;
+; -1.205 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.238      ;
+; -1.205 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.238      ;
+; -1.200 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.236      ;
+; -1.200 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.236      ;
+; -1.200 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.236      ;
+; -1.192 ; MAET:C2|i[1]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.222      ;
+; -1.176 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.212      ;
+; -1.176 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.212      ;
+; -1.171 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.204      ;
+; -1.171 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.204      ;
+; -1.171 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.204      ;
+; -1.164 ; MAET:C2|i[2]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.194      ;
+; -1.163 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.196      ;
+; -1.163 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.196      ;
+; -1.163 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.196      ;
+; -1.157 ; Decoder:C0|sclk[19] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.193      ;
+; -1.152 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.185      ;
+; -1.152 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.185      ;
+; -1.142 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.178      ;
+; -1.142 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.178      ;
+; -1.142 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.178      ;
+; -1.141 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.177      ;
+; -1.141 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.177      ;
+; -1.140 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.173      ;
+; -1.140 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.173      ;
+; -1.140 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.173      ;
+; -1.139 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.172      ;
+; -1.139 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.172      ;
+; -1.139 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.172      ;
+; -1.130 ; MAET:C2|i[0]        ; MAET:C2|i[30]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.160      ;
+; -1.129 ; MAET:C2|i[3]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.159      ;
+; -1.128 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.161      ;
+; -1.128 ; Decoder:C0|sclk[2]  ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.161      ;
+; -1.124 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.160      ;
+; -1.124 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.160      ;
+; -1.124 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.160      ;
+; -1.122 ; MAET:C2|i[25]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 2.159      ;
+; -1.122 ; Decoder:C0|sclk[14] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.158      ;
+; -1.121 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.154      ;
+; -1.121 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.154      ;
+; -1.121 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.154      ;
+; -1.112 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.145      ;
+; -1.112 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.145      ;
+; -1.112 ; Decoder:C0|sclk[4]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.145      ;
+; -1.112 ; MAET:C2|i[24]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 2.149      ;
+; -1.110 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.143      ;
+; -1.110 ; Decoder:C0|sclk[0]  ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.143      ;
+; -1.099 ; MAET:C2|i[0]        ; MAET:C2|i[29]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.129      ;
+; -1.097 ; MAET:C2|i[1]        ; MAET:C2|i[30]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.127      ;
+; -1.095 ; MAET:C2|i[4]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.125      ;
+; -1.093 ; Decoder:C0|sclk[5]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.126      ;
+; -1.086 ; Decoder:C0|sclk[2]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.119      ;
+; -1.085 ; Decoder:C0|sclk[11] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.118      ;
+; -1.081 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.117      ;
+; -1.081 ; Decoder:C0|sclk[19] ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.117      ;
+; -1.070 ; MAET:C2|i[3]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.003      ; 2.105      ;
+; -1.069 ; MAET:C2|i[2]        ; MAET:C2|i[30]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.099      ;
+; -1.068 ; Decoder:C0|sclk[1]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.101      ;
+; -1.068 ; Decoder:C0|sclk[1]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.101      ;
+; -1.068 ; Decoder:C0|sclk[1]  ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.101      ;
+; -1.068 ; MAET:C2|i[8]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.003      ; 2.103      ;
+; -1.068 ; Decoder:C0|sclk[0]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.101      ;
+; -1.066 ; MAET:C2|i[1]        ; MAET:C2|i[29]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.096      ;
+; -1.065 ; Decoder:C0|sclk[5]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.098      ;
+; -1.065 ; Decoder:C0|sclk[5]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.098      ;
+; -1.065 ; MAET:C2|i[18]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.003      ; 2.100      ;
+; -1.064 ; MAET:C2|i[0]        ; MAET:C2|i[28]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.094      ;
+; -1.064 ; Decoder:C0|sclk[15] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.100      ;
+; -1.064 ; Decoder:C0|sclk[15] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.100      ;
+; -1.064 ; Decoder:C0|sclk[15] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.100      ;
+; -1.064 ; Decoder:C0|sclk[16] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.100      ;
+; -1.062 ; MAET:C2|i[0]        ; MAET:C2|i[26]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.092      ;
+; -1.062 ; Decoder:C0|sclk[7]  ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.095      ;
+; -1.060 ; MAET:C2|i[28]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 2.097      ;
+; -1.059 ; MAET:C2|i[1]        ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.003      ; 2.094      ;
+; -1.057 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.090      ;
+; -1.057 ; Decoder:C0|sclk[1]  ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.090      ;
+; -1.056 ; MAET:C2|i[21]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.003      ; 2.091      ;
+; -1.055 ; Decoder:C0|sclk[18] ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.091      ;
+; -1.055 ; Decoder:C0|sclk[18] ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.091      ;
+; -1.055 ; Decoder:C0|sclk[18] ; Decoder:C0|DecodeOut[0] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.091      ;
+; -1.053 ; MAET:C2|i[5]        ; MAET:C2|i[31]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.083      ;
+; -1.053 ; Decoder:C0|sclk[4]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.086      ;
+; -1.053 ; Decoder:C0|sclk[4]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.086      ;
+; -1.050 ; MAET:C2|i[26]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 2.087      ;
+; -1.046 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[0]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.082      ;
+; -1.046 ; Decoder:C0|sclk[14] ; Decoder:C0|Col[3]       ; clk          ; clk         ; 1.000        ; 0.004      ; 2.082      ;
+; -1.046 ; Decoder:C0|sclk[12] ; Decoder:C0|DecodeOut[1] ; clk          ; clk         ; 1.000        ; 0.004      ; 2.082      ;
+; -1.044 ; MAET:C2|i[23]       ; MAET:C2|RESET           ; clk          ; clk         ; 1.000        ; 0.005      ; 2.081      ;
+; -1.041 ; Decoder:C0|sclk[9]  ; Decoder:C0|Col[1]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.074      ;
+; -1.041 ; Decoder:C0|sclk[9]  ; Decoder:C0|Col[2]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.074      ;
+; -1.038 ; MAET:C2|i[2]        ; MAET:C2|i[29]           ; clk          ; clk         ; 1.000        ; -0.002     ; 2.068      ;
+; -1.035 ; Decoder:C0|sclk[6]  ; Decoder:C0|DecodeOut[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.068      ;
+; -1.035 ; Decoder:C0|sclk[6]  ; Decoder:C0|DecodeOut[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 2.068      ;
++--------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; MAET:C2|EtatFutur.init     ; MAET:C2|EtatFutur.init     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; MAET:C2|EtatFutur.etat0    ; MAET:C2|EtatFutur.etat0    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; MAET:C2|EtatFutur.etat3    ; MAET:C2|EtatFutur.etat3    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; MAET:C2|EtatFutur.etat2    ; MAET:C2|EtatFutur.etat2    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; MAET:C2|RESET              ; MAET:C2|RESET              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; MAET:C2|EtatFutur.etat3    ; MAET:C2|EtatPresent.etat3  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.242 ; MAET:C2|EtatFutur.etat4    ; MAET:C2|EtatPresent.etat4  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; counter_pointer:C6|temp[6] ; counter_pointer:C6|temp[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.244 ; Decoder:C0|sclk[19]        ; Decoder:C0|sclk[19]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; counter_pointer:C7|temp[6] ; counter_pointer:C7|temp[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.247 ; tick_sin:C4|i[23]          ; tick_sin:C4|i[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.250 ; tick_sin:C5|i[23]          ; tick_sin:C5|i[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.258 ; MAET:C2|EtatPresent.etat2  ; MAET:C2|EtatFutur.etat4    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.265 ; MAET:C2|EtatPresent.etat2  ; MAET:C2|EtatFutur.etat1    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.417      ;
+; 0.329 ; MAET:C2|EtatFutur.etat2    ; MAET:C2|EtatPresent.etat2  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.333 ; MAET:C2|EtatFutur.etat0    ; MAET:C2|EtatPresent.etat0  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.485      ;
+; 0.338 ; MAET:C2|EtatFutur.init     ; MAET:C2|EtatPresent.init   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.338 ; MAET:C2|EtatFutur.etat1    ; MAET:C2|EtatPresent.etat1  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.355 ; tick_sin:C4|i[12]          ; tick_sin:C4|i[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.356 ; Decoder:C0|sclk[5]         ; Decoder:C0|sclk[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357 ; tick_mae:C1|i[10]          ; tick_mae:C1|i[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.357 ; tick_sin:C5|i[12]          ; tick_sin:C5|i[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; tick_mae:C1|i[14]          ; tick_mae:C1|i[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; tick_mae:C1|i[19]          ; tick_mae:C1|i[19]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; tick_sin:C5|i[0]           ; tick_sin:C5|i[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; tick_sin:C5|i[3]           ; tick_sin:C5|i[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; tick_mae:C1|i[13]          ; tick_mae:C1|i[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; Decoder:C0|sclk[1]         ; Decoder:C0|sclk[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; Decoder:C0|sclk[14]        ; Decoder:C0|sclk[14]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; Decoder:C0|sclk[10]        ; Decoder:C0|sclk[10]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; tick_sin:C4|i[5]           ; tick_sin:C4|i[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; tick_sin:C4|i[7]           ; tick_sin:C4|i[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; tick_sin:C5|i[5]           ; tick_sin:C5|i[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; tick_sin:C5|i[7]           ; tick_sin:C5|i[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.363 ; tick_sin:C4|i[0]           ; tick_sin:C4|i[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C4|i[3]           ; tick_sin:C4|i[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C4|i[9]           ; tick_sin:C4|i[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C4|i[10]          ; tick_sin:C4|i[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C4|i[11]          ; tick_sin:C4|i[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C4|i[13]          ; tick_sin:C4|i[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; counter_pointer:C6|temp[0] ; counter_pointer:C6|temp[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C5|i[9]           ; tick_sin:C5|i[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C5|i[10]          ; tick_sin:C5|i[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; tick_sin:C5|i[11]          ; tick_sin:C5|i[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; tick_mae:C1|i[3]           ; tick_mae:C1|i[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; pwm:C9|cnt[1]              ; pwm:C9|cnt[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; pwm:C9|cnt[3]              ; pwm:C9|cnt[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; pwm:C9|cnt[5]              ; pwm:C9|cnt[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; tick_mae:C1|i[5]           ; tick_mae:C1|i[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C4|i[14]          ; tick_sin:C4|i[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C4|i[19]          ; tick_sin:C4|i[19]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C4|i[21]          ; tick_sin:C4|i[21]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C5|i[13]          ; tick_sin:C5|i[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C5|i[14]          ; tick_sin:C5|i[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C5|i[16]          ; tick_sin:C5|i[16]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; tick_sin:C5|i[19]          ; tick_sin:C5|i[19]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; counter_pointer:C7|temp[5] ; counter_pointer:C7|temp[5] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366 ; tick_mae:C1|i[7]           ; tick_mae:C1|i[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; tick_sin:C4|i[16]          ; tick_sin:C4|i[16]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; tick_sin:C4|i[23]          ; tick_sin:C4|s_out          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; counter_pointer:C6|temp[4] ; counter_pointer:C6|temp[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; counter_pointer:C6|temp[2] ; counter_pointer:C6|temp[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; counter_pointer:C7|temp[1] ; counter_pointer:C7|temp[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.367 ; Decoder:C0|sclk[8]         ; Decoder:C0|sclk[8]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; tick_sin:C5|i[21]          ; tick_sin:C5|i[21]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; counter_pointer:C7|temp[3] ; counter_pointer:C7|temp[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.369 ; tick_mae:C1|i[15]          ; tick_mae:C1|i[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; tick_sin:C5|i[1]           ; tick_sin:C5|i[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; tick_sin:C5|i[2]           ; tick_sin:C5|i[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; tick_sin:C5|i[15]          ; tick_sin:C5|i[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; tick_sin:C5|i[17]          ; tick_sin:C5|i[17]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; tick_sin:C5|i[23]          ; tick_sin:C5|s_out          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.371 ; tick_mae:C1|i[22]          ; tick_mae:C1|i[22]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; Decoder:C0|sclk[2]         ; Decoder:C0|sclk[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; tick_sin:C4|i[1]           ; tick_sin:C4|i[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; tick_sin:C4|i[2]           ; tick_sin:C4|i[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; tick_sin:C5|i[4]           ; tick_sin:C5|i[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; tick_sin:C4|i[4]           ; tick_sin:C4|i[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; tick_mae:C1|i[4]           ; tick_mae:C1|i[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; Decoder:C0|sclk[15]        ; Decoder:C0|sclk[15]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; tick_sin:C4|i[6]           ; tick_sin:C4|i[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; tick_sin:C4|i[8]           ; tick_sin:C4|i[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; tick_sin:C5|i[6]           ; tick_sin:C5|i[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; tick_sin:C5|i[8]           ; tick_sin:C5|i[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; tick_mae:C1|i[6]           ; tick_mae:C1|i[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; tick_sin:C4|i[15]          ; tick_sin:C4|i[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; tick_sin:C5|i[20]          ; tick_sin:C5|i[20]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; pwm:C9|cnt[2]              ; pwm:C9|cnt[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; Decoder:C0|sclk[16]        ; Decoder:C0|sclk[16]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; tick_sin:C4|i[17]          ; tick_sin:C4|i[17]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; tick_sin:C4|i[18]          ; tick_sin:C4|i[18]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; tick_sin:C4|i[20]          ; tick_sin:C4|i[20]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; tick_sin:C4|i[22]          ; tick_sin:C4|i[22]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; pwm:C9|cnt[4]              ; pwm:C9|cnt[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; tick_sin:C5|i[22]          ; tick_sin:C5|i[22]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; tick_mae:C1|i[2]           ; tick_mae:C1|i[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; counter_pointer:C6|temp[1] ; counter_pointer:C6|temp[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; tick_mae:C1|i[1]           ; tick_mae:C1|i[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.379 ; counter_pointer:C7|temp[0] ; counter_pointer:C7|temp[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380 ; counter_pointer:C6|temp[3] ; counter_pointer:C6|temp[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clk'                                                                                                    ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node     ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[12]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[13]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[14]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[15]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[16]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[17]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[18]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[19]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[20]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[21]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[22]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|i[23]               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.056 ; MAET:C2|RESET ; tick_sin:C5|s_out               ; clk          ; clk         ; 1.000        ; -0.005     ; 0.971      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[16]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[14]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[18]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[19]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[12]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[10]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; Decoder:C0|sclk[15]             ; clk          ; clk         ; 1.000        ; -0.004     ; 0.965      ;
+; 0.063 ; MAET:C2|RESET ; pwm:C9|cnt[0]                   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TA[1]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TA[0]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TB[0]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TB[1]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TA[2]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TB[2]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; full_adder_7:C8|TA[3]           ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.063 ; MAET:C2|RESET ; pwm:C9|s                        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.970      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[0]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[1]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[2]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[3]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[4]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[5]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[6]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[7]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[8]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[9]                ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[10]               ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.075 ; MAET:C2|RESET ; tick_sin:C5|i[11]               ; clk          ; clk         ; 1.000        ; -0.002     ; 0.955      ;
+; 0.077 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[8]  ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[9]  ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[1]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[2]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[3]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[4]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[5]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[6]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; pwm:C9|cnt[7]                   ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; full_adder_7:C8|TA[4]           ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; full_adder_7:C8|TB[4]           ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.077 ; MAET:C2|RESET ; full_adder_7:C8|TA[5]           ; clk          ; clk         ; 1.000        ; 0.002      ; 0.957      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[0]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[1]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[2]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[3]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[4]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[5]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[6]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[7]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[8]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[9]                ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[10]               ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; tick_sin:C4|i[11]               ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.080 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 0.954      ;
+; 0.084 ; MAET:C2|RESET ; Decoder:C0|sclk[13]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.948      ;
+; 0.085 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[3]         ; clk          ; clk         ; 1.000        ; 0.000      ; 0.947      ;
+; 0.085 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[2]         ; clk          ; clk         ; 1.000        ; 0.000      ; 0.947      ;
+; 0.085 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[0]         ; clk          ; clk         ; 1.000        ; 0.000      ; 0.947      ;
+; 0.093 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[1]         ; clk          ; clk         ; 1.000        ; 0.000      ; 0.939      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[11]             ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[17]             ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[5]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[4]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[7]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[9]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[2]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[6]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[8]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[3]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[1]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.094 ; MAET:C2|RESET ; Decoder:C0|sclk[0]              ; clk          ; clk         ; 1.000        ; -0.001     ; 0.937      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[0]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[1]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[3]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[4]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[5]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[6]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.198 ; MAET:C2|RESET ; counter_pointer:C7|temp[2]      ; clk          ; clk         ; 1.000        ; -0.002     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[0]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[1]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[3]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[4]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[5]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[6]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; counter_pointer:C6|temp[2]      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
+; 0.199 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[2]  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.832      ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clk'                                                                                                     ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node     ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; full_adder_7:C8|TB[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; MAET:C2|RESET ; full_adder_7:C8|TB[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[12]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[13]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[14]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[15]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[16]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[17]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[18]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[19]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[20]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[21]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[22]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|i[23]               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.675 ; MAET:C2|RESET ; tick_sin:C4|s_out               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.828      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[0]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[1]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[3]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[4]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[5]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[6]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; counter_pointer:C6|temp[2]      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[5]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[2]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.681 ; MAET:C2|RESET ; decodeur_frequences:C3|out2[1]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[0]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[1]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[3]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[4]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[5]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[6]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.682 ; MAET:C2|RESET ; counter_pointer:C7|temp[2]      ; clk          ; clk         ; 0.000        ; -0.002     ; 0.832      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[11]             ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[17]             ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[5]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[4]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[7]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[9]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[2]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[6]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[8]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[3]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[1]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.786 ; MAET:C2|RESET ; Decoder:C0|sclk[0]              ; clk          ; clk         ; 0.000        ; -0.001     ; 0.937      ;
+; 0.787 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.795 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.947      ;
+; 0.795 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.947      ;
+; 0.795 ; MAET:C2|RESET ; Decoder:C0|DecodeOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.947      ;
+; 0.796 ; MAET:C2|RESET ; Decoder:C0|sclk[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[0]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[1]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[2]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[3]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[4]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[5]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[6]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[7]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[8]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[9]                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[10]               ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; tick_sin:C4|i[11]               ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[10] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.800 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[3]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.954      ;
+; 0.803 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[8]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; decodeur_frequences:C3|out1[9]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[1]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[2]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[3]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[4]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[5]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[6]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; pwm:C9|cnt[7]                   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; full_adder_7:C8|TA[4]           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; full_adder_7:C8|TB[4]           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.803 ; MAET:C2|RESET ; full_adder_7:C8|TA[5]           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.957      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[0]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[1]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[2]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[3]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[4]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[5]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[6]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[7]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[8]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[9]                ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[10]               ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.805 ; MAET:C2|RESET ; tick_sin:C5|i[11]               ; clk          ; clk         ; 0.000        ; -0.002     ; 0.955      ;
+; 0.817 ; MAET:C2|RESET ; Decoder:C0|sclk[16]             ; clk          ; clk         ; 0.000        ; -0.004     ; 0.965      ;
+; 0.817 ; MAET:C2|RESET ; Decoder:C0|sclk[14]             ; clk          ; clk         ; 0.000        ; -0.004     ; 0.965      ;
+; 0.817 ; MAET:C2|RESET ; Decoder:C0|sclk[18]             ; clk          ; clk         ; 0.000        ; -0.004     ; 0.965      ;
+; 0.817 ; MAET:C2|RESET ; Decoder:C0|sclk[19]             ; clk          ; clk         ; 0.000        ; -0.004     ; 0.965      ;
+; 0.817 ; MAET:C2|RESET ; Decoder:C0|sclk[12]             ; clk          ; clk         ; 0.000        ; -0.004     ; 0.965      ;
+; 0.817 ; MAET:C2|RESET ; Decoder:C0|sclk[10]             ; clk          ; clk         ; 0.000        ; -0.004     ; 0.965      ;
++-------+---------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[0]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[0]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[1]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[1]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[2]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[2]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|Col[3]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|Col[3]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|DecodeOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|DecodeOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Decoder:C0|sclk[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Decoder:C0|sclk[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat0   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat0   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat2   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat2   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat3   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat3   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.etat4   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.etat4   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatFutur.init    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatFutur.init    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.etat4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.etat4 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|EtatPresent.init  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|EtatPresent.init  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[0]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[0]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[1]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[1]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[2]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[2]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|KEY[3]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|KEY[3]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|RESET             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|RESET             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|TouchInit[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|TouchInit[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|TouchInit[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|TouchInit[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|TouchInit[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|TouchInit[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|i[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; MAET:C2|i[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; MAET:C2|i[10]             ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Row[*]    ; clk        ; 3.479  ; 3.479  ; Rise       ; clk             ;
+;  Row[0]   ; clk        ; 3.437  ; 3.437  ; Rise       ; clk             ;
+;  Row[1]   ; clk        ; 3.242  ; 3.242  ; Rise       ; clk             ;
+;  Row[2]   ; clk        ; 3.421  ; 3.421  ; Rise       ; clk             ;
+;  Row[3]   ; clk        ; 3.479  ; 3.479  ; Rise       ; clk             ;
+; rst       ; clk        ; -0.215 ; -0.215 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Row[*]    ; clk        ; -2.054 ; -2.054 ; Rise       ; clk             ;
+;  Row[0]   ; clk        ; -2.267 ; -2.267 ; Rise       ; clk             ;
+;  Row[1]   ; clk        ; -2.054 ; -2.054 ; Rise       ; clk             ;
+;  Row[2]   ; clk        ; -2.250 ; -2.250 ; Rise       ; clk             ;
+;  Row[3]   ; clk        ; -2.308 ; -2.308 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.335  ; 0.335  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Col[*]     ; clk        ; 4.057 ; 4.057 ; Rise       ; clk             ;
+;  Col[0]    ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  Col[1]    ; clk        ; 4.057 ; 4.057 ; Rise       ; clk             ;
+;  Col[2]    ; clk        ; 3.950 ; 3.950 ; Rise       ; clk             ;
+;  Col[3]    ; clk        ; 3.935 ; 3.935 ; Rise       ; clk             ;
+; audio      ; clk        ; 5.356 ; 5.356 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 2.860 ; 2.860 ; Rise       ; clk             ;
+; valeur[*]  ; clk        ; 4.119 ; 4.119 ; Rise       ; clk             ;
+;  valeur[1] ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  valeur[2] ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  valeur[3] ; clk        ; 4.008 ; 4.008 ; Rise       ; clk             ;
+;  valeur[4] ; clk        ; 4.119 ; 4.119 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 2.860 ; 2.860 ; Fall       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Col[*]     ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  Col[0]    ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  Col[1]    ; clk        ; 4.057 ; 4.057 ; Rise       ; clk             ;
+;  Col[2]    ; clk        ; 3.950 ; 3.950 ; Rise       ; clk             ;
+;  Col[3]    ; clk        ; 3.935 ; 3.935 ; Rise       ; clk             ;
+; audio      ; clk        ; 5.356 ; 5.356 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 2.860 ; 2.860 ; Rise       ; clk             ;
+; valeur[*]  ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  valeur[1] ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  valeur[2] ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  valeur[3] ; clk        ; 4.008 ; 4.008 ; Rise       ; clk             ;
+;  valeur[4] ; clk        ; 4.119 ; 4.119 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 2.860 ; 2.860 ; Fall       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -4.773   ; 0.215 ; -1.041   ; 0.587   ; -1.631              ;
+;  clk             ; -4.773   ; 0.215 ; -1.041   ; 0.587   ; -1.631              ;
+; Design-wide TNS  ; -551.657 ; 0.0   ; -109.422 ; 0.0     ; -250.919            ;
+;  clk             ; -551.657 ; 0.000 ; -109.422 ; 0.000   ; -250.919            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Row[*]    ; clk        ; 8.606 ; 8.606 ; Rise       ; clk             ;
+;  Row[0]   ; clk        ; 8.518 ; 8.518 ; Rise       ; clk             ;
+;  Row[1]   ; clk        ; 8.004 ; 8.004 ; Rise       ; clk             ;
+;  Row[2]   ; clk        ; 8.523 ; 8.523 ; Rise       ; clk             ;
+;  Row[3]   ; clk        ; 8.606 ; 8.606 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.636 ; 0.636 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Row[*]    ; clk        ; -2.054 ; -2.054 ; Rise       ; clk             ;
+;  Row[0]   ; clk        ; -2.267 ; -2.267 ; Rise       ; clk             ;
+;  Row[1]   ; clk        ; -2.054 ; -2.054 ; Rise       ; clk             ;
+;  Row[2]   ; clk        ; -2.250 ; -2.250 ; Rise       ; clk             ;
+;  Row[3]   ; clk        ; -2.308 ; -2.308 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.335  ; 0.335  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; Col[*]     ; clk        ; 7.754  ; 7.754  ; Rise       ; clk             ;
+;  Col[0]    ; clk        ; 7.379  ; 7.379  ; Rise       ; clk             ;
+;  Col[1]    ; clk        ; 7.754  ; 7.754  ; Rise       ; clk             ;
+;  Col[2]    ; clk        ; 7.483  ; 7.483  ; Rise       ; clk             ;
+;  Col[3]    ; clk        ; 7.424  ; 7.424  ; Rise       ; clk             ;
+; audio      ; clk        ; 10.902 ; 10.902 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 5.854  ; 5.854  ; Rise       ; clk             ;
+; valeur[*]  ; clk        ; 7.868  ; 7.868  ; Rise       ; clk             ;
+;  valeur[1] ; clk        ; 6.801  ; 6.801  ; Rise       ; clk             ;
+;  valeur[2] ; clk        ; 7.164  ; 7.164  ; Rise       ; clk             ;
+;  valeur[3] ; clk        ; 7.570  ; 7.570  ; Rise       ; clk             ;
+;  valeur[4] ; clk        ; 7.868  ; 7.868  ; Rise       ; clk             ;
+; clk_out    ; clk        ; 5.854  ; 5.854  ; Fall       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Col[*]     ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  Col[0]    ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  Col[1]    ; clk        ; 4.057 ; 4.057 ; Rise       ; clk             ;
+;  Col[2]    ; clk        ; 3.950 ; 3.950 ; Rise       ; clk             ;
+;  Col[3]    ; clk        ; 3.935 ; 3.935 ; Rise       ; clk             ;
+; audio      ; clk        ; 5.356 ; 5.356 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 2.860 ; 2.860 ; Rise       ; clk             ;
+; valeur[*]  ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  valeur[1] ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  valeur[2] ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  valeur[3] ; clk        ; 4.008 ; 4.008 ; Rise       ; clk             ;
+;  valeur[4] ; clk        ; 4.119 ; 4.119 ; Rise       ; clk             ;
+; clk_out    ; clk        ; 2.860 ; 2.860 ; Fall       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 7249     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 7249     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 123      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 123      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 94    ; 94   ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Mar  7 17:18:35 2018
+Info: Command: quartus_sta Carte_dtmf -c Carte_dtmf
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Carte_dtmf.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.773
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.773      -551.657 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332146): Worst-case recovery slack is -1.041
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.041      -109.422 clk 
+Info (332146): Worst-case removal slack is 1.184
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.184         0.000 clk 
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631      -250.919 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.235
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.235      -105.768 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332146): Worst-case recovery slack is 0.056
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.056         0.000 clk 
+Info (332146): Worst-case removal slack is 0.587
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.587         0.000 clk 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -205.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 523 megabytes
+    Info: Processing ended: Wed Mar  7 17:18:36 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

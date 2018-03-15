@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity pwm is port (
       clk: in std_logic;
-      val : in std_logic_vector (6 downto 0); --valeur recue par le full adder, entre -64 et 64
+      valin : in std_logic_vector (6 downto 0); --valeur recue par le full adder, entre -62 et 62
       reset : in std_logic;
       Sortie : out std_logic );
 end entity pwm;
@@ -26,7 +26,7 @@ process (clk,reset) begin
     cnt <= -64;
   elsif (clk'event and clk='1') then
     
-    if (cnt < to_integer(signed(val))) then s <='1'; --met la sortie à 1 jusqu'a 
+    if (cnt < to_integer(signed(valin))) then s <='1'; --met la sortie à 1 jusqu'a 
     else s <='0';               --la valeur du full adder entre 0 et 10
     end if;
     

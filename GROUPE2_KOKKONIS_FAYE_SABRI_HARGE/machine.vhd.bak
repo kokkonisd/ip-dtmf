@@ -1,0 +1,123 @@
+-- machine a etats
+
+library ieee;
+library std;
+use STD.textio.all;                     -- basic I/O
+use IEEE.std_logic_textio.all;          -- I/O for logic types
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity machine is 
+  Port (
+    CLK : in std_logic;
+	 ROW : in  STD_LOGIC_VECTOR (3 downto 0);
+	 SWITCH_ETAT0 : in std_logic;
+	 SWITCH_ETAT1 : in std_logic;
+	 SWITCH_ETAT2 : in std_logic;
+	 SWITCH_ETAT3 : in std_logic;
+	 COL : out  STD_LOGIC_VECTOR (3 downto 0);
+    AFFICHAGE : out  STD_LOGIC_VECTOR (27 downto 0);
+	 ETAT_ACTUEL : out STD_LOGIC_VECTOR (3 downto 0)
+  );
+end entity machine;
+
+architecture dataflow of machine is
+  type state_type is (e0, e1, e2, e3, e4);
+  signal etatP : state_type;
+  signal etatF : state_type;
+  signal CLEAR : std_logic;
+  signal poubelle : std_logic_vector (3 downto 0);
+  signal tempAffichage : std_LOGIC_VECTOR (27 downto 0) := "1111111111111111111111111111";
+  signal affichagePremier : std_LOGIC_VECTOR (6 downto 0);
+  signal ANODE : integer;
+  
+  begin
+
+ tempAffichage(0) <= affichagePremier(0);
+ tempAffichage(1) <= affichagePremier(1);
+ tempAffichage(2) <= affichagePremier(2); 
+ tempAffichage(3) <= affichagePremier(3);
+ tempAffichage(4) <= affichagePremier(4);
+ tempAffichage(5) <= affichagePremier(5);
+ tempAffichage(6) <= affichagePremier(6);
+ 
+ AFFICHAGE <= tempAffichage;
+
+ 
+  C0: entity work.PmodKYPD(Behavioral) port map(CLK, ROW, COL, affichagePremier, poubelle);
+  
+    clocked : process(CLK)
+    begin
+      if rising_edge(CLK) then
+      case etatP is
+      when e0 =>
+		  ETAT_ACTUEL <= "0000";
+		  --ANODE <= 1;
+      when e1 =>
+        ETAT_ACTUEL <= "0001";
+		  AFFICHAGE <= rotate_left(tempAffichage, 7);
+		  --ANODE <= 2;
+      when e2 =>
+        -- recevoir nombre 2
+		  ETAT_ACTUEL <= "0010";
+		  --ANODE <= 3;
+      when e3 =>
+        -- full adder
+		  ETAT_ACTUEL <= "0011";
+		  --ANODE <= 4;
+      when e4 =>
+        -- affichage
+		  ETAT_ACTUEL <= "0100";
+		  --ANODE <= 1;
+      end case;
+      end if;
+    end process;
+    
+    nextState : process(etatP)
+    begin
+      case etatP is
+      when e0 =>
+        if (CLEAR = '1' or SWITCH_ETAT0 = '0') then
+          etatF <= e0;
+        else
+          -- nombre 1
+          etatF <= e1;
+        end if;
+      when e1 =>
+        if (CLEAR = '1' or SWITCH_ETAT1 = '0') then
+          etatF <= e1;
+        else
+          -- operation
+          etatF <= e2;
+        end if;
+      when e2 =>
+        if (CLEAR = '1' or SWITCH_ETAT2 = '0') then
+          etatF <= e2;
+        else
+          -- nombre 2
+          etatF <= e3;
+        end if;
+      when e3 =>
+			if (SWITCH_ETAT3 = '1') then
+				-- full adder
+				etatF <= e4;
+			else
+				etatF <= e3;
+			end if;
+      when e4 =>
+			if (SWITCH_ETAT0 = '0' and SWITCH_ETAT1 = '0' and SWITCH_ETAT2 = '0' and SWITCH_ETAT3 = '0') then
+				-- affichage
+				etatF <= e0;
+			else
+				etatF <= e4;
+			end if;
+      end case;
+    end process;
+    
+    stateUpdate : process(CLK)
+    begin
+      if rising_edge(CLK) then
+        etatP <= etatF;
+      end if;
+    end process;
+end architecture dataflow;
