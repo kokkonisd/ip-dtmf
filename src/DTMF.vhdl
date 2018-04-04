@@ -30,21 +30,21 @@ signal reset_final : std_LOGIC;
 
 begin
 
-C0 : entity work.PS2_Ctrl port map (Clk, local_reset, PS2_Clk, PS2_Data, '0', Scan_Err, Scan_DAV, Scan_Code);
+--C0 : entity work.PS2_Ctrl port map (Clk, local_reset, PS2_Clk, PS2_Data, '0', Scan_Err, Scan_DAV, Scan_Code);
 -- div 101101110001101100000000
 C1 : entity work.tick_mae port map (rst=>reset_final, clk => Clk, div => "101101110001101100000000", s => enable);
-C2 : entity work.MAET port map (Reset, Clk, enable, Scan_Code, key, local_reset);
+C2 : entity work.MAET port map (reset_final, Clk, enable, Scan_Code, key, local_reset);
 C3 : entity work.decodeur_frequences port map (Clk, local_reset, key, div1, div2);
 C4 : entity work.tick_sin port map (Clk, local_reset, div1, enable_compteur1);
 C5 : entity work.tick_sin port map (Clk, local_reset, div2, enable_compteur2);
 C6 : entity work.counter_pointer port map (Clk, local_reset, enable_compteur1, count1);
 C7 : entity work.counter_pointer port map (Clk, local_reset, enable_compteur2, count2);
 C8 : entity work.full_adder_7 port map (count1, count2, '0', local_reset, Clk, somme);
-C9 : entity work.pwm port map (Clk, somme, local_reset, Audio);
+C9 : entity work.pwm port map (Clk, somme, local_reset, Audio);----
 C10 : entity work.SevenSeg port map (key, '0', disp);
 
 Display <= Scan_Code;--'1' & disp;
 reset_final <= not Reset;
---key <= "1001";
+Scan_Code <= "01110000";
 
 end dataflow;

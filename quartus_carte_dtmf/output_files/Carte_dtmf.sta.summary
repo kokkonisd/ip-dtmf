@@ -2,44 +2,44 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Setup 'Clk'
-Slack : -4.220
-TNS   : -375.943
-
 Type  : Setup 'Reset'
-Slack : -3.424
-TNS   : -131.756
+Slack : -3.738
+TNS   : -127.943
+
+Type  : Setup 'Clk'
+Slack : -3.609
+TNS   : -266.967
 
 Type  : Hold 'Reset'
-Slack : -1.593
-TNS   : -27.697
+Slack : -1.285
+TNS   : -25.989
 
 Type  : Hold 'Clk'
-Slack : 0.672
+Slack : 0.813
 TNS   : 0.000
 
 Type  : Recovery 'Clk'
-Slack : -6.785
-TNS   : -912.133
+Slack : -7.246
+TNS   : -663.437
 
 Type  : Recovery 'Reset'
-Slack : 3.562
+Slack : 3.746
 TNS   : 0.000
 
 Type  : Removal 'Reset'
-Slack : -3.103
-TNS   : -18.618
+Slack : -3.287
+TNS   : -16.435
 
 Type  : Removal 'Clk'
-Slack : 3.803
+Slack : 3.769
 TNS   : 0.000
 
 Type  : Minimum Pulse Width 'Clk'
 Slack : -1.155
-TNS   : -231.631
+TNS   : -164.103
 
 Type  : Minimum Pulse Width 'Reset'
 Slack : -1.155
-TNS   : -73.087
+TNS   : -64.279
 
 ------------------------------------------------------------

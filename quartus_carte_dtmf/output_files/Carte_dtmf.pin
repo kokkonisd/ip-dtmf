@@ -65,8 +65,8 @@ CHIP  "Carte_dtmf"  ASSIGNED TO AN: EP1C6T144C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND*                         : 1         :        :                   :         : 1         :                
-Audio                        : 2         : output : 3.3-V LVTTL       :         : 1         : Y              
-GND*                         : 3         :        :                   :         : 1         :                
+GND*                         : 2         :        :                   :         : 1         :                
+Audio                        : 3         : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 4         :        :                   :         : 1         :                
 GND*                         : 5         :        :                   :         : 1         :                
 GND*                         : 6         :        :                   :         : 1         :                
@@ -148,7 +148,7 @@ VCCIO3                       : 81        : power  :                   : 3.3V    
 GND*                         : 82        :        :                   :         : 3         :                
 GND*                         : 83        :        :                   :         : 3         :                
 GND*                         : 84        :        :                   :         : 3         :                
-GND*                         : 85        :        :                   :         : 3         :                
+Display[7]                   : 85        : output : 3.3-V LVTTL       :         : 3         : N              
 CONF_DONE                    : 86        :        :                   :         : 3         :                
 nSTATUS                      : 87        :        :                   :         : 3         :                
 TCK                          : 88        : input  :                   :         : 3         :                
@@ -196,7 +196,7 @@ Display[5]                   : 129       : output : 3.3-V LVTTL       :         
 Display[6]                   : 130       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 131       :        :                   :         : 2         :                
 GND*                         : 132       :        :                   :         : 2         :                
-Display[7]                   : 133       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 133       :        :                   :         : 2         :                
 GND*                         : 134       :        :                   :         : 2         :                
 VCCINT                       : 135       : power  :                   : 1.5V    :           :                
 GND                          : 136       : gnd    :                   :         :           :                

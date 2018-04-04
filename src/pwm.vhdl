@@ -23,14 +23,14 @@ process (clk,reset) begin
   
   if reset ='1' then 
     s<='0';
-    cnt <= -64;
-  elsif (clk'event and clk='1') then
+    cnt <= 0;
+  elsif (rising_edge(clk)) then
     
-    if (cnt < to_integer(signed(valin))) then s <='1'; --met la sortie à 1 jusqu'a 
+    if (cnt < to_integer(signed(valin))) then s <='1'; --met la sortie a 1 jusqu'a 
     else s <='0';               --la valeur du full adder entre 0 et 10
     end if;
     
-    if (cnt = 63) then cnt<= -64; --remet à 0 quand on a
+    if (cnt = 127) then cnt<= 0; --remet à 0 quand on a
     else cnt <= cnt + 1;                 -- compté jusqu'a 10
     end if;
   end if;

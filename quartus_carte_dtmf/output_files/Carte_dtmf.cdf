@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP1C6T144) Path("/nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/quartus_carte_dtmf/output_files/") File("Carte_dtmf.sof") MfrSpec(OpMask(1));
+		Device PartName(EP1C6T144) Path("/nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/quartus_carte_dtmf/output_files/") File("Carte_dtmf.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

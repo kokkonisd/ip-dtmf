@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Carte_dtmf
-Thu Mar 15 12:37:01 2018
+Wed Apr  4 15:16:27 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -16,15 +16,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   8. State Machine - |DTMF|MAET:C2|EtatFutur
   9. State Machine - |DTMF|MAET:C2|EtatPresent
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: PS2_Ctrl:C0
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Port Connectivity Checks: "SevenSeg:C10"
  16. Port Connectivity Checks: "full_adder_7:C8|FULLADDER:\leloop:0:L0"
  17. Port Connectivity Checks: "full_adder_7:C8"
- 18. Port Connectivity Checks: "tick_mae:C1"
- 19. Port Connectivity Checks: "PS2_Ctrl:C0"
+ 18. Port Connectivity Checks: "MAET:C2"
+ 19. Port Connectivity Checks: "tick_mae:C1"
  20. Elapsed Time Per Partition
  21. Analysis & Synthesis Messages
 
@@ -52,12 +52,12 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +-----------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Mar 15 12:37:01 2018            ;
+; Analysis & Synthesis Status ; Successful - Wed Apr  4 15:16:26 2018            ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name               ; Carte_dtmf                                       ;
 ; Top-level Entity Name       ; DTMF                                             ;
 ; Family                      ; Cyclone                                          ;
-; Total logic elements        ; 370                                              ;
+; Total logic elements        ; 286                                              ;
 ; Total pins                  ; 13                                               ;
 ; Total virtual pins          ; 0                                                ;
 ; Total memory bits           ; 0                                                ;
@@ -152,7 +152,7 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -160,7 +160,7 @@ applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -169,17 +169,16 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
-; ../../PS2_Kbd/SevenSeg.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/PS2_Kbd/SevenSeg.vhd                 ;         ;
-; ../../PS2_Kbd/PS2_Ctrl.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/PS2_Kbd/PS2_Ctrl.vhd                 ;         ;
-; ../src/machine_a_etats.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/machine_a_etats.vhd      ;         ;
-; ../src/tick_sin.vhdl             ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/tick_sin.vhdl            ;         ;
-; ../src/counter_pointer.vhdl      ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/counter_pointer.vhdl     ;         ;
-; ../src/decodeur_frequences.vhdl  ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/decodeur_frequences.vhdl ;         ;
-; ../src/full_a_4.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/full_a_4.vhd             ;         ;
-; ../src/Full_add.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/Full_add.vhd             ;         ;
-; ../src/pwm.vhdl                  ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/pwm.vhdl                 ;         ;
-; ../src/tick_mae.vhdl             ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/tick_mae.vhdl            ;         ;
-; ../src/DTMF.vhdl                 ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/DTMF.vhdl                ;         ;
+; ../src/PS2_Kbd/SevenSeg.vhd      ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/PS2_Kbd/SevenSeg.vhd     ;         ;
+; ../src/machine_a_etats.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/machine_a_etats.vhd      ;         ;
+; ../src/tick_sin.vhdl             ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/tick_sin.vhdl            ;         ;
+; ../src/counter_pointer.vhdl      ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/counter_pointer.vhdl     ;         ;
+; ../src/decodeur_frequences.vhdl  ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/decodeur_frequences.vhdl ;         ;
+; ../src/full_a_4.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/full_a_4.vhd             ;         ;
+; ../src/Full_add.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/Full_add.vhd             ;         ;
+; ../src/pwm.vhdl                  ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/pwm.vhdl                 ;         ;
+; ../src/tick_mae.vhdl             ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/tick_mae.vhdl            ;         ;
+; ../src/DTMF.vhdl                 ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/DTMF.vhdl                ;         ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
 
 
@@ -188,33 +187,33 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 370   ;
-;     -- Combinational with no register       ; 164   ;
-;     -- Register only                        ; 67    ;
-;     -- Combinational with a register        ; 139   ;
+; Total logic elements                        ; 286   ;
+;     -- Combinational with no register       ; 132   ;
+;     -- Register only                        ; 36    ;
+;     -- Combinational with a register        ; 118   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 133   ;
-;     -- 3 input functions                    ; 17    ;
-;     -- 2 input functions                    ; 138   ;
-;     -- 1 input functions                    ; 14    ;
+;     -- 4 input functions                    ; 98    ;
+;     -- 3 input functions                    ; 14    ;
+;     -- 2 input functions                    ; 127   ;
+;     -- 1 input functions                    ; 10    ;
 ;     -- 0 input functions                    ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 248   ;
-;     -- arithmetic mode                      ; 122   ;
+;     -- normal mode                          ; 167   ;
+;     -- arithmetic mode                      ; 119   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 66    ;
-;     -- asynchronous clear/load mode         ; 163   ;
+;     -- synchronous clear/load mode          ; 62    ;
+;     -- asynchronous clear/load mode         ; 116   ;
 ;                                             ;       ;
-; Total registers                             ; 206   ;
-; Total logic cells in carry chains           ; 130   ;
+; Total registers                             ; 154   ;
+; Total logic cells in carry chains           ; 126   ;
 ; I/O pins                                    ; 13    ;
 ; Maximum fan-out node                        ; Clk   ;
-; Maximum fan-out                             ; 163   ;
-; Total fan-out                               ; 1423  ;
-; Average fan-out                             ; 3.72  ;
+; Maximum fan-out                             ; 116   ;
+; Total fan-out                               ; 1081  ;
+; Average fan-out                             ; 3.62  ;
 +---------------------------------------------+-------+
 
 
@@ -223,12 +222,11 @@ applicable agreement for further details.
 +--------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+--------------+
 ; Compilation Hierarchy Node     ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                          ; Library Name ;
 +--------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+--------------+
-; |DTMF                          ; 370 (0)     ; 206          ; 0           ; 13   ; 0            ; 164 (0)      ; 67 (0)            ; 139 (0)          ; 130 (0)         ; 0 (0)      ; |DTMF                                        ; work         ;
-;    |MAET:C2|                   ; 117 (117)   ; 49           ; 0           ; 0    ; 0            ; 68 (68)      ; 6 (6)             ; 43 (43)          ; 32 (32)         ; 0 (0)      ; |DTMF|MAET:C2                                ; work         ;
-;    |PS2_Ctrl:C0|               ; 42 (42)     ; 33           ; 0           ; 0    ; 0            ; 9 (9)        ; 26 (26)           ; 7 (7)            ; 4 (4)           ; 0 (0)      ; |DTMF|PS2_Ctrl:C0                            ; work         ;
+; |DTMF                          ; 286 (0)     ; 154          ; 0           ; 13   ; 0            ; 132 (0)      ; 36 (0)            ; 118 (0)          ; 126 (0)         ; 0 (0)      ; |DTMF                                        ; work         ;
+;    |MAET:C2|                   ; 96 (96)     ; 43           ; 0           ; 0    ; 0            ; 53 (53)      ; 5 (5)             ; 38 (38)          ; 32 (32)         ; 0 (0)      ; |DTMF|MAET:C2                                ; work         ;
 ;    |counter_pointer:C6|        ; 9 (9)       ; 7            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 7 (7)            ; 7 (7)           ; 0 (0)      ; |DTMF|counter_pointer:C6                     ; work         ;
 ;    |counter_pointer:C7|        ; 9 (9)       ; 7            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 7 (7)            ; 7 (7)           ; 0 (0)      ; |DTMF|counter_pointer:C7                     ; work         ;
-;    |decodeur_frequences:C3|    ; 18 (18)     ; 14           ; 0           ; 0    ; 0            ; 4 (4)        ; 4 (4)             ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |DTMF|decodeur_frequences:C3                 ; work         ;
+;    |decodeur_frequences:C3|    ; 1 (1)       ; 1            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |DTMF|decodeur_frequences:C3                 ; work         ;
 ;    |full_adder_7:C8|           ; 23 (12)     ; 12           ; 0           ; 0    ; 0            ; 11 (0)       ; 12 (12)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DTMF|full_adder_7:C8                        ; work         ;
 ;       |FULLADDER:\leloop:0:L0| ; 1 (1)       ; 0            ; 0           ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DTMF|full_adder_7:C8|FULLADDER:\leloop:0:L0 ; work         ;
 ;       |FULLADDER:\leloop:1:L0| ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DTMF|full_adder_7:C8|FULLADDER:\leloop:1:L0 ; work         ;
@@ -238,8 +236,8 @@ applicable agreement for further details.
 ;       |FULLADDER:\leloop:5:L0| ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DTMF|full_adder_7:C8|FULLADDER:\leloop:5:L0 ; work         ;
 ;    |pwm:C9|                    ; 24 (24)     ; 9            ; 0           ; 0    ; 0            ; 15 (15)      ; 4 (4)             ; 5 (5)            ; 8 (8)           ; 0 (0)      ; |DTMF|pwm:C9                                 ; work         ;
 ;    |tick_mae:C1|               ; 56 (56)     ; 25           ; 0           ; 0    ; 0            ; 31 (31)      ; 13 (13)           ; 12 (12)          ; 24 (24)         ; 0 (0)      ; |DTMF|tick_mae:C1                            ; work         ;
-;    |tick_sin:C4|               ; 36 (36)     ; 25           ; 0           ; 0    ; 0            ; 11 (11)      ; 1 (1)             ; 24 (24)          ; 24 (24)         ; 0 (0)      ; |DTMF|tick_sin:C4                            ; work         ;
-;    |tick_sin:C5|               ; 36 (36)     ; 25           ; 0           ; 0    ; 0            ; 11 (11)      ; 1 (1)             ; 24 (24)          ; 24 (24)         ; 0 (0)      ; |DTMF|tick_sin:C5                            ; work         ;
+;    |tick_sin:C4|               ; 34 (34)     ; 25           ; 0           ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 24 (24)          ; 24 (24)         ; 0 (0)      ; |DTMF|tick_sin:C4                            ; work         ;
+;    |tick_sin:C5|               ; 34 (34)     ; 25           ; 0           ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 24 (24)          ; 24 (24)         ; 0 (0)      ; |DTMF|tick_sin:C5                            ; work         ;
 +--------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -285,14 +283,36 @@ Encoding Type:  One-Hot
 ; decodeur_frequences:C3|out1[5]         ; Merged with decodeur_frequences:C3|out1[9] ;
 ; decodeur_frequences:C3|out2[3,4]       ; Merged with decodeur_frequences:C3|out2[5] ;
 ; decodeur_frequences:C3|out2[0]         ; Merged with decodeur_frequences:C3|out2[2] ;
-; MAET:C2|TouchInit[4]                   ; Stuck at VCC due to stuck port data_in     ;
-; MAET:C2|TouchInit[3]                   ; Stuck at GND due to stuck port data_in     ;
-; MAET:C2|TouchInit[2]                   ; Stuck at VCC due to stuck port data_in     ;
-; MAET:C2|TouchInit[1]                   ; Stuck at GND due to stuck port data_in     ;
-; MAET:C2|TouchInit[0]                   ; Stuck at VCC due to stuck port data_in     ;
-; MAET:C2|TouchInit[5..7]                ; Stuck at GND due to stuck port data_in     ;
-; Total Number of Removed Registers = 16 ;                                            ;
+; MAET:C2|TouchInit[0..3,5..7]           ; Merged with MAET:C2|TouchInit[4]           ;
+; MAET:C2|TouchInit[4]                   ; Stuck at GND due to stuck port data_in     ;
+; MAET:C2|KEY[1..3]                      ; Merged with MAET:C2|KEY[0]                 ;
+; decodeur_frequences:C3|out1[0,3,10]    ; Stuck at GND due to stuck port data_in     ;
+; decodeur_frequences:C3|out2[6,8]       ; Stuck at GND due to stuck port data_in     ;
+; MAET:C2|KEY[0]                         ; Stuck at GND due to stuck port data_in     ;
+; decodeur_frequences:C3|out2[1]         ; Stuck at GND due to stuck port data_in     ;
+; decodeur_frequences:C3|out2[2]         ; Merged with decodeur_frequences:C3|out2[5] ;
+; decodeur_frequences:C3|out2[5]         ; Merged with decodeur_frequences:C3|out2[7] ;
+; decodeur_frequences:C3|out2[7]         ; Merged with decodeur_frequences:C3|out1[2] ;
+; decodeur_frequences:C3|out1[2]         ; Merged with decodeur_frequences:C3|out1[6] ;
+; decodeur_frequences:C3|out1[6]         ; Merged with decodeur_frequences:C3|out1[7] ;
+; decodeur_frequences:C3|out1[7]         ; Merged with decodeur_frequences:C3|out1[8] ;
+; decodeur_frequences:C3|out1[8]         ; Merged with decodeur_frequences:C3|out1[9] ;
+; MAET:C2|EtatFutur.etat1                ; Stuck at GND due to stuck port data_in     ;
+; MAET:C2|EtatPresent.etat1              ; Stuck at GND due to stuck port data_in     ;
+; Total Number of Removed Registers = 35 ;                                            ;
 +----------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                          ;
++-------------------------+---------------------------+------------------------------------------------+
+; Register name           ; Reason for Removal        ; Registers Removed due to This Register         ;
++-------------------------+---------------------------+------------------------------------------------+
+; MAET:C2|TouchInit[4]    ; Stuck at GND              ; MAET:C2|KEY[0], decodeur_frequences:C3|out2[1] ;
+;                         ; due to stuck port data_in ;                                                ;
+; MAET:C2|EtatFutur.etat1 ; Stuck at GND              ; MAET:C2|EtatPresent.etat1                      ;
+;                         ; due to stuck port data_in ;                                                ;
++-------------------------+---------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -300,12 +320,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 206   ;
-; Number of registers using Synchronous Clear  ; 66    ;
+; Total registers                              ; 154   ;
+; Number of registers using Synchronous Clear  ; 62    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 159   ;
+; Number of registers using Asynchronous Clear ; 112   ;
 ; Number of registers using Asynchronous Load  ; 4     ;
-; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Clock Enable       ; 14    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -320,31 +340,18 @@ Encoding Type:  One-Hot
 ; pwm:C9|cnt[2]                          ; 3       ;
 ; pwm:C9|cnt[7]                          ; 3       ;
 ; MAET:C2|i[31]                          ; 3       ;
-; MAET:C2|i[0]                           ; 7       ;
+; MAET:C2|i[0]                           ; 3       ;
 ; Total number of inverted registers = 6 ;         ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DTMF|PS2_Ctrl:C0|Bit_Cnt[0] ;
-; 49:1               ; 2 bits    ; 64 LEs        ; 46 LEs               ; 18 LEs                 ; Yes        ; |DTMF|MAET:C2|KEY[1]         ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |DTMF|MAET:C2|i              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DTMF|MAET:C2|Selector39     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-
-
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: PS2_Ctrl:C0 ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; FilterSize     ; 8     ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |DTMF|MAET:C2|i            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -376,6 +383,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------+
+; Port Connectivity Checks: "MAET:C2"           ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; touch[6..4] ; Input ; Info     ; Stuck at VCC ;
+; touch[3..0] ; Input ; Info     ; Stuck at GND ;
+; touch[7]    ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++-----------------------------------------------+
 ; Port Connectivity Checks: "tick_mae:C1"       ;
 +-------------+-------+----------+--------------+
 ; Port        ; Type  ; Severity ; Details      ;
@@ -393,17 +411,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PS2_Ctrl:C0"                                                                            ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; doread   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; scan_err ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; scan_dav ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -419,63 +426,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Mar 15 12:36:59 2018
+    Info: Processing started: Wed Apr  4 15:16:24 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Carte_dtmf -c Carte_dtmf
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/PS2_Kbd/SevenSeg.vhd
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/PS2_Kbd/SevenSeg.vhd
     Info (12022): Found design unit 1: SevenSeg-Comb
     Info (12023): Found entity 1: SevenSeg
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/PS2_Kbd/PS2simpl.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/PS2_Kbd/PS2simpl.vhd
     Info (12022): Found design unit 1: PS2SIMPL-SCHEMATIC
     Info (12023): Found entity 1: PS2SIMPL
-Info (12021): Found 3 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/PS2_Kbd/PS2_Ctrl.vhd
+Info (12021): Found 3 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/PS2_Kbd/PS2_Ctrl.vhd
     Info (12022): Found design unit 1: PS2_Ctrl-Plain_Wrong
     Info (12022): Found design unit 2: PS2_Ctrl-ALSE_RTL
     Info (12023): Found entity 1: PS2_Ctrl
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/GROUPE2_KOKKONIS_FAYE_SABRI_HARGE/PmodKYPD.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/GROUPE2_KOKKONIS_FAYE_SABRI_HARGE/PmodKYPD.vhd
     Info (12022): Found design unit 1: PmodKYPD-Behavioral
     Info (12023): Found entity 1: PmodKYPD
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/GROUPE2_KOKKONIS_FAYE_SABRI_HARGE/Decoder.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/GROUPE2_KOKKONIS_FAYE_SABRI_HARGE/Decoder.vhd
     Info (12022): Found design unit 1: Decoder-Behavioral
     Info (12023): Found entity 1: Decoder
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/machine_a_etats.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/machine_a_etats.vhd
     Info (12022): Found design unit 1: MAET-MAET_A
     Info (12023): Found entity 1: MAET
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/tick_sin.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/tick_sin.vhdl
     Info (12022): Found design unit 1: tick_sin-behav
     Info (12023): Found entity 1: tick_sin
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/counter_pointer.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/counter_pointer.vhdl
     Info (12022): Found design unit 1: counter_pointer-behav
     Info (12023): Found entity 1: counter_pointer
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/decodeur_frequences.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/decodeur_frequences.vhdl
     Info (12022): Found design unit 1: decodeur_frequences-behav
     Info (12023): Found entity 1: decodeur_frequences
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/sin_tab.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/sin_tab.vhdl
     Info (12022): Found design unit 1: sin_tab-behav
     Info (12023): Found entity 1: sin_tab
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/full_a_4.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/full_a_4.vhd
     Info (12022): Found design unit 1: full_adder_7-full_adder_7_a
     Info (12023): Found entity 1: full_adder_7
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/Full_add.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/Full_add.vhd
     Info (12022): Found design unit 1: FULLADDER-dataflow
     Info (12023): Found entity 1: FULLADDER
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/pwm.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/pwm.vhdl
     Info (12022): Found design unit 1: pwm-arc
     Info (12023): Found entity 1: pwm
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/tick_mae.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/tick_mae.vhdl
     Info (12022): Found design unit 1: tick_mae-behav
     Info (12023): Found entity 1: tick_mae
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/DTMF.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/DTMF.vhdl
     Info (12022): Found design unit 1: DTMF-dataflow
     Info (12023): Found entity 1: DTMF
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3700758/ip-dtmf/src/mae2.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3520311/ip-dtmf/src/mae2.vhdl
     Info (12022): Found design unit 1: MAET2-MAET_A
     Info (12023): Found entity 1: MAET2
 Info (12127): Elaborating entity "DTMF" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DTMF.vhdl(18): object "Scan_Err" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at DTMF.vhdl(19): object "Scan_DAV" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at DTMF.vhdl(28): object "disp" assigned a value but never read
-Info (12128): Elaborating entity "PS2_Ctrl" for hierarchy "PS2_Ctrl:C0"
 Info (12128): Elaborating entity "tick_mae" for hierarchy "tick_mae:C1"
 Info (12128): Elaborating entity "MAET" for hierarchy "MAET:C2"
 Info (12128): Elaborating entity "decodeur_frequences" for hierarchy "decodeur_frequences:C3"
@@ -486,17 +490,28 @@ Warning (10873): Using initial value X (don't care) for net "Ctab[0]" at full_a_
 Info (12128): Elaborating entity "FULLADDER" for hierarchy "full_adder_7:C8|FULLADDER:\leloop:0:L0"
 Info (12128): Elaborating entity "pwm" for hierarchy "pwm:C9"
 Info (12128): Elaborating entity "SevenSeg" for hierarchy "SevenSeg:C10"
-Info (18000): Registers with preset signals will power-up high
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Display[0]" is stuck at GND
+    Warning (13410): Pin "Display[1]" is stuck at GND
+    Warning (13410): Pin "Display[2]" is stuck at GND
+    Warning (13410): Pin "Display[3]" is stuck at GND
+    Warning (13410): Pin "Display[4]" is stuck at VCC
+    Warning (13410): Pin "Display[5]" is stuck at VCC
+    Warning (13410): Pin "Display[6]" is stuck at VCC
+    Warning (13410): Pin "Display[7]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 383 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "PS2_Clk"
+    Warning (15610): No output dependent on input pin "PS2_Data"
+Info (21057): Implemented 299 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 370 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 613 megabytes
-    Info: Processing ended: Thu Mar 15 12:37:01 2018
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 286 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 596 megabytes
+    Info: Processing ended: Wed Apr  4 15:16:27 2018
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
