@@ -53,6 +53,6 @@ begin
         wait for (100 ms - clk_period);
     end process;
 
-    test_touch <= "01101100";
+    test_touch <= "01111101";
 
 end architecture;

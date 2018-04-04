@@ -42,7 +42,7 @@ begin
                 case EtatPresent is
                     when init =>
                         i <= 9;
-                        KEY <= "XXXX";
+                        KEY <= "1111";
                         RESET <= '1';
                         if (ENABLE = '1') then
                             EtatFutur <= etat0;
@@ -50,7 +50,7 @@ begin
 			 
                     when etat0 =>
                         RESET <= '0';
-			            if (ENABLE <= '1') then
+			            if (ENABLE = '1') then
                             if (TOUCH /= "00010101") then
                                 EtatFutur <= etat4;
                             else
@@ -129,7 +129,7 @@ begin
             					when "01111101" =>
             						KEY <= "1001";
             					when others =>
-            						KEY <= "XXXX";
+            						KEY <= "1111";
             				end case;
                         end if;
           
