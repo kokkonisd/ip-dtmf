@@ -1,21 +1,21 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity tick_sin_tb is
+entity tick_mae_tb is
 end entity;
 
-architecture test of tick_sin_tb is
-    -- define the tick_sin component
-    component tick_sin 
+architecture test of tick_mae_tb is
+    -- define the tick_mae component
+    component tick_mae 
         port (
             clk, rst : in std_logic;
-            div : in std_logic_vector (10 downto 0);
+            div : in std_logic_vector (23 downto 0);
             s : out std_logic
         );
     end component; 
 
     -- clock divisions signal
-    signal test_div : std_logic_vector (10 downto 0);
+    signal test_div : std_logic_vector (23 downto 0);
     -- artificial clock and reset, output
     signal test_clk, test_s, test_rst : std_logic;
     -- clock period
@@ -23,13 +23,14 @@ architecture test of tick_sin_tb is
 
 begin
     -- entity port map
-    test : tick_sin port map(test_clk, test_rst, test_div, test_s);
+    test : tick_mae port map(test_clk, test_rst, test_div, test_s);
 
     test_rst <= '0';
 
-    -- div = 634 = Fclk / (Fsin * 64) 
-    -- for Fsin = 1477Hz and Fclk = 60 MHz
-    test_div <= "10101000001";
+    -- Fclk = 60MHz
+    -- Fsin = 1 / 200ms
+    -- div = Fclk / Fsin = 12000000 = 0b101101110001101100000000
+    test_div <= "101101110001101100000000";
 
     clk_process : process
     begin
@@ -39,6 +40,6 @@ begin
         wait for clk_period / 2;
     end process;
 
-    -- we should get ~94487 Hz =~ 64 * 1477 Hz
+    -- output should be a 200ms tick
 
 end architecture ;
