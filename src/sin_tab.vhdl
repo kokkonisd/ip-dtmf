@@ -1,22 +1,34 @@
+-- Sin wave table memory
+--
+-- This IP stores pre-generated sin wave values. It behaves as an
+-- addressed memory (taking an integer address input between 0 and 63 and
+-- outputing the corresponding sin wave value)
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- entity definition
 entity sin_tab is
     port (
+        -- standard clock and reset signals
         clk, rst : in std_logic;
+        -- input address (between 0 and 63)
         addr : in std_logic_vector (5 downto 0);
+        -- output sin wave value corresponding to the input address
         value : out std_logic_vector (5 downto 0)
     );
 end entity;
 
+-- architecture definition
 architecture behav of sin_tab is
-
+-- temp signals 
 signal addr_dec : integer range 0 to 63;
-signal value_tmp, value_dec, value_out : integer range -31 to 31 := 0;
+signal value_tmp, value_dec, value_out : integer range -31 to 31;
 
 begin
 
+    -- transform binary address to an integer
     addr_dec <= to_integer(unsigned(addr));
 
     -- lookup
@@ -38,17 +50,22 @@ begin
         30 when 14 | 18 | 46 | 50,
         31 when 15 | 16 | 17 | 47 | 48 | 49;
 
+    -- handle negative values
     value_dec <= -value_tmp when (addr_dec > 32) else value_tmp;
 
-    process (clk, rst)
+    -- clocked process
+    process (clk)
     begin
+        -- on reset output 0
         if (rst = '1') then
             value_out <= 0;
+        -- on rising edge output the selected value
         elsif rising_edge(clk) then
             value_out <= value_dec;
         end if;
     end process;
 
+    -- re-transform the output value from decimal to binary
     value <= std_logic_vector(to_signed(value_out, 6));
 
 end architecture;

@@ -1,3 +1,9 @@
+-- Tick to power the timing of the state machine
+--
+-- This IP provides an enable signal that the state machine uses
+-- to time its changing of states (mainly to control output generation
+-- following DTMF timing standards)
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

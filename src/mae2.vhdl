@@ -1,3 +1,9 @@
+-- State machine for the decoding/timing of keys
+--
+-- This IP handles decoding the key codes received from the keyboard IP
+-- and also handles the timing of the DTMF generator (following the DTMF norms).
+-- Finally, it handles the playing of pre-recorded sequencies of keys hard-coded in the machine.
+
 Library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -74,8 +80,8 @@ begin
                         RESET <= '0';
                         -- if there's an enable signal 
 			            if (ENABLE = '1') then
-                            -- TODO : (if touch != keys ABCD)
-                            if (TOUCH /= "00010101" and TOUCH /= "01010101") then
+                            -- if touch = keys between 0 and 9
+                            if (TOUCH = "01110000" or TOUCH = "01101001" or TOUCH = "01110010" or TOUCH = "01111010" or TOUCH = "01101011" or TOUCH = "01110011" or TOUCH = "01110100" or TOUCH = "01101100" or TOUCH = "01110101" or TOUCH = "01111101") then
                                 -- if the touch code received doesn't correspond
                                 -- to any of the key codes A-C, it's a simple digit
                                 -- so the future state is state 4
@@ -83,7 +89,7 @@ begin
                             else
                                 -- else it's a predefined number
                                 -- and the future state is state 1
-                                TouchInit <= TOUCH;--TODO
+                                TouchInit <= TOUCH;
                                 EtatFutur <= etat1;
                             end if;
                         end if;
